@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <title>포유하우스 6층 공동현관 수정 도안</title>
+  <desc>제공 도면을 기준으로 한 6층 배치: 중앙 엘리베이터 2대, 좌우 계단실, 601호부터 606호까지 여섯 세대.</desc>
+  <rect width="1400" height="900" fill="#f7f8f7"/>
+  <text x="70" y="83" font-family="Malgun Gothic, sans-serif" font-size="34" font-weight="700" fill="#18252b">포유하우스 공동현관 · 6층 수정 도안</text>
+  <text x="72" y="121" font-family="Malgun Gothic, sans-serif" font-size="18" fill="#526168">4~10층은 같은 구조 · 층별 호수만 변경</text>
+  <rect x="70" y="155" width="1260" height="610" rx="12" fill="#fff" stroke="#d9dfdf" stroke-width="2"/>
+
+  <!-- The wide passage, side unit positions, and central lift recess follow the supplied sketch. -->
+  <path d="M 90 555 H 1310" stroke="#20292d" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M 90 225 H 258 V 390 H 355 V 445 H 475 V 225" stroke="#20292d" stroke-width="7" fill="none" stroke-linejoin="round"/>
+  <path d="M 830 225 V 445 H 1045 V 390 H 1142 V 225 H 1310" stroke="#20292d" stroke-width="7" fill="none" stroke-linejoin="round"/>
+
+  <!-- The two central lifts. -->
+  <rect x="515" y="174" width="114" height="83" fill="#e2edf0" stroke="#20292d" stroke-width="6"/>
+  <rect x="678" y="174" width="114" height="83" fill="#e2edf0" stroke="#20292d" stroke-width="6"/>
+  <text x="572" y="210" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#172b32">엘리베이터</text>
+  <text x="572" y="238" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="21" font-weight="700" fill="#172b32">1</text>
+  <text x="735" y="210" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#172b32">엘리베이터</text>
+  <text x="735" y="238" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="21" font-weight="700" fill="#172b32">2</text>
+
+  <!-- Stairs are immediately outside the lift bank on both sides. -->
+  <rect x="259" y="390" width="96" height="55" fill="#e8e7e2" stroke="#20292d" stroke-width="5"/>
+  <rect x="1046" y="390" width="96" height="55" fill="#e8e7e2" stroke="#20292d" stroke-width="5"/>
+  <text x="307" y="425" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#172b32">계단실</text>
+  <text x="1094" y="425" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#172b32">계단실</text>
+
+  <!-- Homes at the left and right ends. -->
+  <rect x="90" y="225" width="168" height="165" fill="#f4eee7" stroke="#20292d" stroke-width="5"/>
+  <rect x="90" y="390" width="168" height="165" fill="#f4eee7" stroke="#20292d" stroke-width="5"/>
+  <rect x="1142" y="225" width="168" height="165" fill="#f4eee7" stroke="#20292d" stroke-width="5"/>
+  <rect x="1142" y="390" width="168" height="165" fill="#f4eee7" stroke="#20292d" stroke-width="5"/>
+  <text x="174" y="315" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="28" font-weight="700" fill="#243138">606호</text>
+  <text x="174" y="480" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="28" font-weight="700" fill="#243138">605호</text>
+  <text x="1226" y="315" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="28" font-weight="700" fill="#243138">601호</text>
+  <text x="1226" y="480" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="28" font-weight="700" fill="#243138">602호</text>
+
+  <!-- Bottom pair of homes. -->
+  <rect x="270" y="555" width="235" height="180" fill="#f4eee7" stroke="#20292d" stroke-width="5"/>
+  <rect x="855" y="555" width="235" height="180" fill="#f4eee7" stroke="#20292d" stroke-width="5"/>
+  <text x="388" y="655" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="30" font-weight="700" fill="#243138">604호</text>
+  <text x="973" y="655" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="30" font-weight="700" fill="#243138">603호</text>
+
+  <text x="700" y="500" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" letter-spacing="5" fill="#667c80">공용 복도</text>
+  <path d="M 1155 480 H 1050 M 1050 480 L 1074 466 M 1050 480 L 1074 494" stroke="#2d866f" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1205" y="520" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="700" fill="#2d866f">비상구 방향</text>
+
+  <text x="72" y="817" font-family="Malgun Gothic, sans-serif" font-size="18" fill="#42555c">원본 배치 기준 · 601~606호 · 중앙 승강기 2대 · 좌우 계단실</text>
+  <text x="72" y="850" font-family="Malgun Gothic, sans-serif" font-size="16" fill="#718188">치수·출입문 위치와 원본에서 잘린 오른쪽 세부는 확정되지 않은 개략 도안입니다.</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-labelledby="title desc">
+  <title id="title">안방 침대와 화장대 배치 검토 도면</title>
+  <desc id="desc">안방 약 4.37 곱하기 5.04미터. 침대는 왼쪽 뒤, 옷장은 왼쪽 앞에 있으며 화장대는 앞벽 쪽 제안 위치다. 오른쪽 벽에 방 문과 안방 화장실 문이 있다.</desc>
+  <rect width="900" height="680" fill="#f5f1e9"/>
+  <text x="72" y="58" font-family="Malgun Gothic,Arial,sans-serif" font-size="29" font-weight="700" fill="#293437">안방 배치 검토</text>
+  <text x="72" y="87" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" fill="#667376">위에서 내려다본 모습 · 치수는 게임용 추정치</text>
+  <rect x="100" y="125" width="440" height="444" rx="4" fill="#ddd4c4" stroke="#5f6c6b" stroke-width="8"/>
+  <rect x="106" y="131" width="428" height="432" fill="#e8d9bd"/>
+  <rect x="212" y="192" width="214" height="222" rx="15" fill="#b79e82" stroke="#71604f" stroke-width="4"/>
+  <rect x="222" y="202" width="194" height="202" rx="11" fill="#eef0ed"/>
+  <rect x="232" y="211" width="79" height="39" rx="8" fill="#d7dcda"/>
+  <rect x="322" y="211" width="79" height="39" rx="8" fill="#d7dcda"/>
+  <rect x="222" y="258" width="194" height="145" rx="6" fill="#a4b0ae"/>
+  <text x="319" y="343" text-anchor="middle" font-family="Malgun Gothic,Arial,sans-serif" font-size="23" font-weight="700" fill="#243437">침대</text>
+  <text x="319" y="371" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" fill="#38545a">약 2.13 × 2.49 m</text>
+  <rect x="113" y="452" width="73" height="113" rx="6" fill="#eeece6" stroke="#939b97" stroke-width="3"/>
+  <text x="149" y="516" text-anchor="middle" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" fill="#4b5a5b">옷장</text>
+  <rect x="359" y="504" width="126" height="53" rx="5" fill="#b4d6d1" stroke="#307c7e" stroke-width="3" stroke-dasharray="8 6"/>
+  <ellipse cx="422" cy="493" rx="37" ry="15" fill="none" stroke="#307c7e" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="422" y="537" text-anchor="middle" font-family="Malgun Gothic,Arial,sans-serif" font-size="17" font-weight="700" fill="#246669">화장대 제안</text>
+  <rect x="533" y="195" width="15" height="76" fill="#f5f1e9"/>
+  <path d="M539 195 A76 76 0 0 0 463 271" fill="none" stroke="#809196" stroke-width="3"/>
+  <text x="557" y="224" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" fill="#445659">안방 화장실</text>
+  <rect x="533" y="410" width="15" height="88" fill="#f5f1e9"/>
+  <path d="M539 410 A88 88 0 0 0 451 498" fill="none" stroke="#809196" stroke-width="3"/>
+  <text x="558" y="458" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" fill="#445659">거실에서 들어오는 문</text>
+  <path d="M100 598 H540" stroke="#445659" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="320" y="621" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#445659">약 4.37 m</text>
+  <path d="M65 125 V569" stroke="#445659" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="48" y="350" transform="rotate(-90 48 350)" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#445659">약 5.04 m</text>
+  <rect x="665" y="132" width="28" height="20" rx="3" fill="#a4b0ae"/>
+  <text x="706" y="149" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" fill="#344346">현재 침대</text>
+  <rect x="665" y="174" width="28" height="20" rx="3" fill="#b4d6d1" stroke="#307c7e" stroke-dasharray="5 3"/>
+  <text x="706" y="191" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" fill="#344346">화장대 제안 위치</text>
+  <text x="665" y="253" font-family="Malgun Gothic,Arial,sans-serif" font-size="17" font-weight="700" fill="#293437">직접 수정할 부분</text>
+  <text x="665" y="289" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" fill="#425052">① 침대 방향과 위치</text>
+  <text x="665" y="322" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" fill="#425052">② 화장대 위치와 크기</text>
+  <text x="665" y="355" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" fill="#425052">③ 옷장 유지 여부</text>
+  <text x="665" y="410" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" fill="#6b797a">화장대는 현재 게임에 없음</text>
+  <text x="665" y="432" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" fill="#6b797a">도면의 청록색은 제안</text>
+  <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse"><path d="M7 0 L0 3.5 L7 7" fill="none" stroke="#445659" stroke-width="1.5"/></marker></defs>
+</svg>

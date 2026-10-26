@@ -1,0 +1,27 @@
+{
+  "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/dining_table/dining_table_1k.gltf",
+  "md5": "556aed1f86536dba7cc5917c36ee7ab7",
+  "size": 4165,
+  "include": {
+    "textures/dining_table_nor_gl_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/dining_table/dining_table_nor_gl_1k.jpg",
+      "md5": "f9e982c15242ff9e544d4968c377abb2",
+      "size": 707020
+    },
+    "textures/dining_table_diff_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/dining_table/dining_table_diff_1k.jpg",
+      "md5": "a309bb6839c628305059775d7480c8b7",
+      "size": 852259
+    },
+    "textures/dining_table_arm_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/dining_table/dining_table_arm_1k.jpg",
+      "md5": "0be0f4618ef26ce517ebf049e90bcc7c",
+      "size": 689497
+    },
+    "dining_table.bin": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/dining_table/dining_table.bin",
+      "md5": "13227e80b4c213bd7fee570e0b23fe8c",
+      "size": 30992
+    }
+  }
+}

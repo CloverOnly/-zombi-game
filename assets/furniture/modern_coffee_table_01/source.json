@@ -1,0 +1,27 @@
+{
+  "include": {
+    "modern_coffee_table_01.bin": {
+      "size": 154864,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/modern_coffee_table_01/modern_coffee_table_01.bin",
+      "md5": "6e8f65bff935af308eab9eff062f6daa"
+    },
+    "textures/modern_coffee_table_01_rough_1k.jpg": {
+      "size": 403959,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_01/modern_coffee_table_01_rough_1k.jpg",
+      "md5": "6ccbc448fa0e2bed32eac52511e84e2c"
+    },
+    "textures/modern_coffee_table_01_diff_1k.jpg": {
+      "size": 410569,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_01/modern_coffee_table_01_diff_1k.jpg",
+      "md5": "356014e027b59c21b3c99ac112e645f9"
+    },
+    "textures/modern_coffee_table_01_nor_gl_1k.jpg": {
+      "size": 359134,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_01/modern_coffee_table_01_nor_gl_1k.jpg",
+      "md5": "d263e6131abc518760d6771390bc5066"
+    }
+  },
+  "size": 2771,
+  "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/modern_coffee_table_01/modern_coffee_table_01_1k.gltf",
+  "md5": "f1c079ab5bc307630258cf3b40910511"
+}

@@ -1,0 +1,29 @@
+<!doctype html><meta charset="utf-8"><base href="../"><style>body{margin:0;overflow:hidden}</style><canvas id="v"></canvas><script src="three.min.js"></script>
+<script src="assets/photo-bundle.js?v=confirmed-plan-26"></script>
+<script src="surfaces.js?v=confirmed-plan-26"></script>
+<script src="street-details.js?v=confirmed-plan-26"></script>
+<script src="exterior.js?v=confirmed-plan-26"></script>
+<script src="assets/interior-bundle.js?v=confirmed-plan-26"></script>
+<script src="interior-polish.js?v=confirmed-plan-26"></script>
+<script src="rooms.js?v=confirmed-plan-26"></script>
+<script src="zombie.js?v=confirmed-plan-26"></script>
+<script src="elevator.js?v=floor6-602-route-4"></script>
+<script src="parking.js?v=confirmed-plan-26"></script>
+<script src="mart-route.js?v=confirmed-plan-26"></script>
+<script src="streets.js?v=common-entry-1"></script>
+<script src="hallway.js?v=visual-softening-9"></script>
+<script src="assets/mart-photo-bundle.js?v=confirmed-plan-26"></script>
+<script src="mart-interior.js?v=confirmed-plan-26"></script>
+<script src="realistic-furniture.js?v=furniture-2"></script>
+<script src="photo-apartment.js?v=furniture-2"></script>
+<script src="world.js?v=visual-softening-9"></script>
+<script src="audio.js?v=confirmed-plan-26"></script>
+<script src="driving.js?v=confirmed-plan-26"></script>
+<script src="street-ai.js?v=confirmed-plan-26"></script>
+<script src="chapter.js?v=floor6-1"></script><script>
+      const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('v'),antialias:true});renderer.setSize(1280,720);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.9;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+      const world=window.createPoyuWorld(THREE,renderer),camera=new THREE.PerspectiveCamera(70,1280/720,.06,1100);camera.rotation.order='YXZ';camera.layers.enable(1);
+      window.show=(x,z,yaw,pitch=-.15)=>{camera.position.set(15.93+(x-15.93)*1.12,1.5,10.8+(z-10.8)*1.12);camera.rotation.set(pitch,-yaw-Math.PI/2,0,'YXZ');renderer.render(world.scene,camera);};
+      window.showWorld=(x,z,yaw,pitch=-.04,fov=44)=>{camera.fov=fov;camera.updateProjectionMatrix();camera.position.set(x,1.5,z);camera.rotation.set(pitch,-yaw-Math.PI/2,0,'YXZ');world.updatePresentation({x,z,level:'floor4'},camera,1);renderer.render(world.scene,camera);};
+      window.show(8.5,-1.7,-2.52,-.23);window.ready=world.apartment.furniture.ready.then(s=>{window.result={loaded:s.loaded,failed:s.failed,materials:s.materials};window.show(8.5,-1.7,-2.52,-.23);});
+    </script>

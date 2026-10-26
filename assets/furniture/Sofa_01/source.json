@@ -1,0 +1,27 @@
+{
+  "include": {
+    "textures/Sofa_01_diff_1k.jpg": {
+      "size": 134925,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/Sofa_01/Sofa_01_diff_1k.jpg",
+      "md5": "a4d07c6c0fd696cb6fa4bd5bad1debc3"
+    },
+    "textures/Sofa_01_nor_gl_1k.jpg": {
+      "size": 154517,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/Sofa_01/Sofa_01_nor_gl_1k.jpg",
+      "md5": "7e4aca2b86e09375d25182c7bd4580db"
+    },
+    "Sofa_01.bin": {
+      "size": 111264,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/Sofa_01/Sofa_01.bin",
+      "md5": "77b6d42bd17eed825d5d65c769c71f0c"
+    },
+    "textures/Sofa_01_arm_1k.jpg": {
+      "size": 114593,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/Sofa_01/Sofa_01_arm_1k.jpg",
+      "md5": "c7b757edd1f5fb506341be0063b9a3eb"
+    }
+  },
+  "size": 2636,
+  "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/Sofa_01/Sofa_01_1k.gltf",
+  "md5": "b5f8106d38a9e8dcb52b883663bbeed1"
+}
