@@ -53,7 +53,7 @@ window.createPoyuChapter=function createPoyuChapter({world,player,onMessage=()=>
     retreatFrom={x:player.x,z:player.z};retreatReason=reason;phase('retreat');
     onMessage(reason==='first'?'문을 닫아야 한다!':'집 안으로 물러났다. 호흡을 가다듬자.',2200);
   }
-  function reset({prepared:ready=false,armed=false,spawnDoor=false,afterCombat=false,afterNeighbours=false,driveCheckpoint=false,streetCheckpoint=false,martCheckpoint=false}={}){
+  function reset({prepared:ready=false,armed=false,spawnDoor=false,afterCombat=false,safeEntrance=false,afterNeighbours=false,driveCheckpoint=false,streetCheckpoint=false,martCheckpoint=false}={}){
     if(martCheckpoint)streetCheckpoint=true;
     if(streetCheckpoint)driveCheckpoint=true;
     world.mart.reset();
@@ -63,6 +63,7 @@ window.createPoyuChapter=function createPoyuChapter({world,player,onMessage=()=>
     if(armed){view.cabinet.opened=1;view.cabinet.setOpen(true);view.cabinet.update(0,true);}
     if(spawnDoor||armed){player.x=doorInside.x;player.z=doorPoint.z;player.yaw=0;player.pitch=0;}
     if(afterCombat||afterNeighbours||driveCheckpoint){state.hasBat=true;state.firstRetreated=true;state.enemyHP=0;state.deathTime=2;enemy.visible=true;enemy.position.set(18.35,0,doorPoint.z);phase('survey');player.x=18.1;player.z=9.5;player.yaw=0;player.pitch=0;world.homeDoor.setOpen(true);world.homeDoor.update(1);}
+    if(safeEntrance){state.hasBat=true;state.firstRetreated=true;state.enemyHP=0;state.deathTime=2;enemy.visible=false;phase('survey');player.x=doorInside.x;player.z=doorPoint.z;player.yaw=0;player.pitch=0;world.homeDoor.setOpen(false);world.homeDoor.update(1);}
     if(afterNeighbours||driveCheckpoint){state.neighbourRefused=true;for(const n of view.neighbours){state.visited.add(n.id);state.notes.push({number:n.number,text:n.description});view.markInspected(n.id);}phase('go-parking');player.z=15.5;player.yaw=Math.PI/2;}
     if(driveCheckpoint){state.parkingReached=true;Object.assign(world.parking.state,{unlocked:true,inCar:true,opened:0,targetOpen:0});player.yaw=0;player.pitch=0;world.driving.syncRider();phase('vehicle-ready');}
     if(streetCheckpoint){const car=world.parking;car.vehicle.root.position.set(60,world.elevator.groundY-car.y,90);car.vehicle.root.rotation.set(0,0,0,'YXZ');car.state.level='floor1';world.driving.reset();world.driving.syncRider();player.yaw=Math.PI/2;player.pitch=.015;state.groundReached=true;state.completed=true;}

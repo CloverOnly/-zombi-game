@@ -229,23 +229,24 @@
     byId('continueChapterButton').classList.toggle('hidden',kind==='dead');byId('restartButton').textContent=kind==='dead'?(streetRetry?'운전석에서 다시 시도':'현관에서 다시 시도'):'처음부터 다시';
     releaseMouseLook();
   }
-  function startGame({photoTour=false,checkpoint=false,armed=false,afterCombat=false,driveCheckpoint=false,streetCheckpoint=false,martCheckpoint=false}={}){
+  function startGame({photoTour=false,checkpoint=false,armed=false,afterCombat=false,safeEntrance=false,driveCheckpoint=false,streetCheckpoint=false,martCheckpoint=false}={}){
     if(martCheckpoint)streetCheckpoint=true;
     if(streetCheckpoint)driveCheckpoint=true;
     player.x=startView.x;player.z=startView.z;player.yaw=startView.yaw;player.pitch=startView.pitch;player.stamina=1;player.level='floor4';player.floorY=0;player.eyeHeight=startView.eye;player.inCar=false;stride=0;
-    for(const item of world.collectibles){item.got=checkpoint||armed||afterCombat||driveCheckpoint;item.group.visible=!item.got;}
-    chapter.reset({prepared:checkpoint||armed||afterCombat||driveCheckpoint,armed:armed||afterCombat||driveCheckpoint,spawnDoor:checkpoint||armed,afterCombat,driveCheckpoint,streetCheckpoint,martCheckpoint});hudSignature='';
+    for(const item of world.collectibles){item.got=checkpoint||armed||afterCombat||safeEntrance||driveCheckpoint;item.group.visible=!item.got;}
+    chapter.reset({prepared:checkpoint||armed||afterCombat||safeEntrance||driveCheckpoint,armed:armed||afterCombat||safeEntrance||driveCheckpoint,spawnDoor:checkpoint||armed,afterCombat,safeEntrance,driveCheckpoint,streetCheckpoint,martCheckpoint});hudSignature='';
     if(photoTour){const v=world.apartment.photoViews.hall;player.x=v.x;player.z=v.z;player.yaw=v.yaw;player.pitch=v.pitch;player.eyeHeight=v.eye;}
     camera.fov=photoTour?world.apartment.photoViews.hall.fov:startView.fov;camera.updateProjectionMatrix();
     running=true;finished=false;openPanel('');updateHUD();
     intro.classList.add('hidden');ending.classList.add('hidden');hud.classList.remove('hidden');
-    showMessage(photoTour?'6층 602호입니다. 방 3개, 화장실 2개와 소파 뒤 벽을 반영했습니다.':martCheckpoint?'롯데마트 노은점 1층입니다. 내려가는 무빙워크에 접근해 E로 B1 식품관에 들어가세요.':streetCheckpoint?'1층 포유하우스 앞길입니다. 마우스로 둘러보고, E로 시동을 걸어 골목을 탐색하세요.':driveCheckpoint?'E로 시동을 걸고 W/S·A/D로 운전하세요. 주차장 오른쪽 출구를 따라 경사로로 내려갑니다.':afterCombat?'감염자는 쓰러졌다. 601·603~606호를 살펴보고, 생존자에게 말을 걸어 보자.':checkpoint||armed?'6층 602호에서 준비물은 챙겼다. 현관문을 열고 복도를 확인하자.':'6층 602호. 현관문 손잡이가 천천히 내려갔다. 화장대 위 휴대폰부터 찾아보자.',4800);
+    showMessage(photoTour?'6층 602호입니다. 방 3개, 화장실 2개와 소파 뒤 벽을 반영했습니다.':martCheckpoint?'롯데마트 노은점 1층입니다. 내려가는 무빙워크에 접근해 E로 B1 식품관에 들어가세요.':streetCheckpoint?'1층 포유하우스 앞길입니다. 마우스로 둘러보고, E로 시동을 걸어 골목을 탐색하세요.':driveCheckpoint?'E로 시동을 걸고 W/S·A/D로 운전하세요. 주차장 오른쪽 출구를 따라 경사로로 내려갑니다.':safeEntrance?'준비물과 방망이를 챙긴 현관입니다. 복도의 좀비 없이 이웃집 조사부터 진행할 수 있습니다.':afterCombat?'감염자는 쓰러졌다. 601·603~606호를 살펴보고, 생존자에게 말을 걸어 보자.':checkpoint||armed?'6층 602호에서 준비물은 챙겼다. 현관문을 열고 복도를 확인하자.':'6층 602호. 현관문 손잡이가 천천히 내려갔다. 화장대 위 휴대폰부터 찾아보자.',4800);
     lastAlarm=world.clock.getElapsedTime();
     alertAudio?.unlock().then(ok=>{updateSoundUI();if(ok&&running&&!finished)alertAudio.play(1);});
     enableMouseLook();
   }
   byId('startButton').addEventListener('click',()=>startGame());
   byId('photoTourButton').addEventListener('click',()=>startGame({photoTour:true}));
+  byId('safeEntranceButton').addEventListener('click',()=>startGame({safeEntrance:true}));
   byId('checkpointButton').addEventListener('click',()=>startGame({checkpoint:true}));
   byId('parkingCheckpointButton').addEventListener('click',()=>startGame({afterCombat:true}));
   byId('driveCheckpointButton').addEventListener('click',()=>startGame({driveCheckpoint:true}));

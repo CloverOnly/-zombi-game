@@ -37,10 +37,6 @@ window.buildPoyuHallway=function buildPoyuHallway(THREE,kit){
   edgeWall(17.2,16,20);
   for(const [a,b] of [[20,24],[31,32]])edgeWall(13.2,a,b);
   for(const [a,b] of [[16,23.45],[24.55,28.45],[29.55,30.8],[32.8,36]])edgeWall(8.4,a,b);
-  // The short return hides 601 when looking back from 605 while leaving the
-  // straight walking route open along the opposite side of the passage.
-  barrier(.14,2.6,2.1,25.5,1.3,12.15,'601-sightline-screen');
-  part(.035,.095,2.1,25.40,.05,12.15,trim,'601-sightline-skirting');
   for(const [a,b] of [[8.4,9.95],[11.05,15.65],[16.75,19.2]])sideWall(36,a,b);
   sideWall(24,13.2,20.4);sideWall(31,13.2,20.4);
   sideWall(32,13.2,15.65);sideWall(32,16.75,19.2);
