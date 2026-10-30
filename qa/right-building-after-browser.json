@@ -1,0 +1,408 @@
+{
+  "models": {
+    "zombie": true,
+    "bat": true,
+    "hands": true,
+    "vanity": true,
+    "bed": true,
+    "errors": [],
+    "vehicles": {
+      "loaded": true,
+      "parked": 33,
+      "driverDoor": true,
+      "errors": [],
+      "parkedTriangles": 13878,
+      "sourceMeshes": 305,
+      "materials": 10,
+      "sourceSize": [
+        4.840295469388366,
+        1.5451387965586036,
+        2.1809000074863434
+      ]
+    },
+    "handMesh": {
+      "asset": "Dan Ulrich / Blender Studio CC0 hand + para rig",
+      "triangles": 7396,
+      "handTriangles": 6596,
+      "joints": 27,
+      "fingers": 5,
+      "gripBone": "Grip_R",
+      "authoredGrip": true,
+      "skinColor": true,
+      "skinNormal": true,
+      "skinRoughness": true,
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          2048,
+          2048
+        ],
+        [
+          2048,
+          2048
+        ]
+      ],
+      "materials": [
+        {
+          "name": "Sleeved_Right_Arm",
+          "color": true,
+          "normal": true,
+          "roughness": true,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              1024,
+              1024
+            ],
+            [
+              1024,
+              1024
+            ]
+          ]
+        },
+        {
+          "name": "Studio_Scan_Right_Hand",
+          "color": true,
+          "normal": true,
+          "roughness": true,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              2048,
+              2048
+            ],
+            [
+              2048,
+              2048
+            ]
+          ]
+        }
+      ],
+      "animations": [
+        "Idle",
+        "Walk",
+        "Run",
+        "Attack"
+      ],
+      "normalSource": "authored skin microdetail / Poly Haven cloth normal",
+      "state": "Idle"
+    },
+    "corridor": {
+      "models": {
+        "korean_fire_extinguisher_01": {
+          "meshes": 3,
+          "pbr": 3
+        },
+        "mounted_fluorescent_lights": {
+          "meshes": 14,
+          "pbr": 14
+        },
+        "modern_wooden_cabinet": {
+          "meshes": 3,
+          "pbr": 3
+        },
+        "utility_box_02": {
+          "meshes": 1,
+          "pbr": 1
+        }
+      },
+      "materials": {
+        "floor_tiles_02": true,
+        "painted_plaster_wall": true
+      },
+      "errors": []
+    },
+    "exterior": {
+      "loaded": true,
+      "panels": 4,
+      "pbrMeshes": 8,
+      "twosomePanels": 21,
+      "twosomePbrMeshes": 32,
+      "twosomeReturns": 11,
+      "streetWallModules": 11,
+      "streetPbrSurfaces": 4,
+      "streetUtilityModels": 2,
+      "error": null,
+      "referenceDetails": {
+        "loaded": true,
+        "models": [
+          "reference-bollard",
+          "reference-manhole",
+          "reference-horizontal-railing",
+          "reference-storefront",
+          "reference-building-closure"
+        ],
+        "bollards": 8,
+        "manholes": 7,
+        "railingPanels": 75,
+        "storefrontPanels": 9,
+        "closurePanels": 175,
+        "drawBatches": 9,
+        "triangles": 100640,
+        "pbrMaterials": [
+          {
+            "name": "Reference dark bollard",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Reference reflective bands",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "water_manhole_cover",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Reference brushed galvanized steel",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Reference storefront modular_urban_apartments_facade_glass",
+            "color": false,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Reference brushed galvanized steel",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "building-interior-lining",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "building-opaque-fascia",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "parking-turn-lining",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          }
+        ],
+        "error": null
+      },
+      "rightBuilding": {
+        "loaded": true,
+        "target": "hospital",
+        "models": [
+          "clinic-window",
+          "clinic-entry",
+          "clinic-cornice",
+          "clinic-cladding"
+        ],
+        "officeWindows": 60,
+        "shopWindows": 8,
+        "entries": 2,
+        "wallPanels": 176,
+        "batches": 12,
+        "triangles": 71746,
+        "materials": [
+          {
+            "name": "Clinic pale photographic cladding",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Clinic teal glass with authored blinds",
+            "color": true,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Clinic aluminium frame",
+            "color": false,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Clinic plain glazed entry",
+            "color": false,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Clinic aluminium frame.002",
+            "color": false,
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Clinic charcoal metal",
+            "color": false,
+            "normal": true,
+            "roughness": true
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "error": null,
+  "frameSamples": 29,
+  "medianFps": 0.23715227547608253,
+  "drawCalls": 1187,
+  "triangles": 1914344,
+  "detail": {
+    "loaded": true,
+    "models": [
+      "reference-bollard",
+      "reference-manhole",
+      "reference-horizontal-railing",
+      "reference-storefront",
+      "reference-building-closure"
+    ],
+    "bollards": 8,
+    "manholes": 7,
+    "railingPanels": 75,
+    "storefrontPanels": 9,
+    "closurePanels": 175,
+    "drawBatches": 9,
+    "triangles": 100640,
+    "pbrMaterials": [
+      {
+        "name": "Reference dark bollard",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Reference reflective bands",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "water_manhole_cover",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Reference brushed galvanized steel",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Reference storefront modular_urban_apartments_facade_glass",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Reference brushed galvanized steel",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "building-interior-lining",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "building-opaque-fascia",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "parking-turn-lining",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      }
+    ],
+    "error": null
+  },
+  "rightBuilding": {
+    "loaded": true,
+    "target": "hospital",
+    "models": [
+      "clinic-window",
+      "clinic-entry",
+      "clinic-cornice",
+      "clinic-cladding"
+    ],
+    "officeWindows": 60,
+    "shopWindows": 8,
+    "entries": 2,
+    "wallPanels": 176,
+    "batches": 12,
+    "triangles": 71746,
+    "materials": [
+      {
+        "name": "Clinic pale photographic cladding",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic teal glass with authored blinds",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic aluminium frame",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic plain glazed entry",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic aluminium frame.002",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic charcoal metal",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      }
+    ],
+    "error": null
+  },
+  "errors": [],
+  "failed": [],
+  "shots": [
+    "corner",
+    "wall",
+    "front"
+  ],
+  "tag": "after"
+}

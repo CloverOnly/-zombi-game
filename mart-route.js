@@ -122,7 +122,7 @@ window.buildPoyuMartRoute=function(T,{group,S,D,box,flat,block,area,roads,floors
   D.plate('사고 · 통행 불가',3.5,.5,85,1.4,225,Math.PI,'#443b32','#e2c286');
   for(const x of [83.65,86.35]){D.bar([x,.15,225],[x,1.6,225],.024,S.metal);D.bar([x,.15,224.5],[x,1.25,225],.024,S.metal);box(.45,.10,.7,x,.07,225,S.dark);}
   const destination={x:183,z:438,range:4.5},parkingPoint={x:185,z:454};
-  const route=[[60,93],[60,132],[86,132],[86,194],[96,211],[96,258],[86,279],[86,332],[101,336],[128,319],[196,290],[204,300],[219,451],[201,456],[185,454]].map(([x,z])=>({x,z}));
+  const route=[[53,75],[55,75],[58,76],[60,80],[60,132],[86,132],[86,194],[96,211],[96,258],[86,279],[86,332],[101,336],[128,319],[196,290],[204,300],[219,451],[201,456],[185,454]].map(([x,z])=>({x,z}));
   function update(time){for(const h of hazards)h.visible=Math.sin(time*7)>.1;for(const b of signals)b.material.emissiveIntensity=Math.sin(time*3)>0?1.8:.15;for(const {p,phase} of smoke){const u=(time*.12+phase)%1;p.position.set(85+u*1.3,1.2+u*4.5,233+Math.sin(u*4)*.3);p.scale.setScalar(.5+u*2.5);p.material.opacity=(1-u)*.13;}}
   return {route,wrecks,crashAt,destination,parkingPoint,update,bounds:{minX:-70,maxX:238,minZ:-55,maxZ:505}};
 };

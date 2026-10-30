@@ -1,0 +1,10 @@
+White four-door sedan — Innerscene original model
+Source: https://www.innerscene.com/tools/library/3d-parts/white-four-door-sedan-1f271353
+Download: https://www.innerscene.com/api/library/white-four-door-sedan-1f271353/download
+License: CC0 1.0 Universal, public domain dedication. Commercial use, modification and redistribution permitted.
+License declaration: https://www.innerscene.com/tools/library/terms
+CC0 legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+Downloaded 2026-10-29. Original unbranded generic sedan; not a licensed replica of a photographed vehicle.
+Original GLB bytes: 5063600
+SHA256: 0CD9FE7520255F93F0B1B56B6597100B058579AF980506C23E285ABD511C2845
+Game modifications are applied at runtime: size/orientation, driver door panel separation, glass compatibility, geometry merging, parked-vehicle LOD, and instance colors.

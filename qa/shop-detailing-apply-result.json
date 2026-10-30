@@ -1,0 +1,128 @@
+{
+  "backup": "C:\\Users\\lyj\\git\\-zombi-game\\qa\\backups\\shop-detailing-20261030-162740",
+  "target": "C:\\Users\\lyj\\git\\-zombi-game",
+  "finalBrowserVerified": true,
+  "modelsLoaded": 7,
+  "errors": 0,
+  "failedRequests": 0,
+  "frameRateMeasured": false,
+  "geometryTest": "passed: map/collision/AI route unchanged; patio stays off road; street-only visibility",
+  "files": [
+    {
+      "file": "right-building-upgrade.js",
+      "sha256": "69FA98E1442647E883FCE39A4BA4A990AAF4103A7F34DB01A723F9D809BA53A0"
+    },
+    {
+      "file": "index.html",
+      "sha256": "82B141E998F523BC3FB53F9C05EDAC06E254D0D3B636B6EE8C25538FC43936EE"
+    },
+    {
+      "file": "qa\\right-building-test.cjs",
+      "sha256": "DE126FAC1C5AE591B36F6C1F54FC4C28AD0AD1032C74C54EFE37C2C36F300A5A"
+    },
+    {
+      "file": "qa\\street-review.cjs",
+      "sha256": "F2003535EB8C8395F4F25BA4D5BBDB7C931161CD88E919031BEA22F9B8AF0398"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\shop-awning.glb",
+      "sha256": "A526956FA062B8CE9092EFDBB333BE62389B9DFCA229EA58BC9939BD03144338"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\shop-metal-profile.glb",
+      "sha256": "07DCE8917CFA674DBA4028A52325E99C03D5D4E590C353980B194FE9516D114B"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\shop-patio.glb",
+      "sha256": "66D4D4497806B1AA146FFDA82881709D0435388F58BBCB3ACC7F050C04B46E97"
+    },
+    {
+      "file": "SHOP_DETAILING.md",
+      "sha256": "9A7D9E21C46A24EC1297A8AAE33655C8816A4A48D066E8E4B09EDDBF4D961343"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\LICENSE.md",
+      "sha256": "72528D5E0E6921C11936C55EEF1C75E5B159BB16B969EF4AC347808A7701DB84"
+    },
+    {
+      "file": "qa\\build-shop-details.py",
+      "sha256": "8248BC8C3A52F0452C0830D25254342EA7A9B66873451B83C8E8220EC2B0A5FE"
+    },
+    {
+      "file": "qa\\shop-detail-build.json",
+      "sha256": "2004DAC33821C66DD418D8B67A32AD4A7AEA53D5D8BC6A87CA5E2E44DD956E06"
+    },
+    {
+      "file": "qa\\shop-detail-source.blend",
+      "sha256": "54E75074D9538743CE80EC7E346FEF09105546AFEF17A10D30C16FD871EF1AC1"
+    },
+    {
+      "file": "qa\\right-building-geometry.json",
+      "sha256": "25F64F8D90D32E3DF141CCFBB572F6DE8A60CD388D3CFE7FFA597B3677798635"
+    },
+    {
+      "file": "qa\\shop-detail-downloads\\outdoor-table-files.json",
+      "sha256": "27CF97B14B1A2BEAD8599A4755A26251B6A6472E4BCB81047E9F34744669DBB8"
+    },
+    {
+      "file": "qa\\shop-detailing-before-front.png",
+      "sha256": "4F22F7155F522EA770F8ECE746828374BCF807E704B80354AD71024E83A8FE98"
+    },
+    {
+      "file": "qa\\shop-detailing-before-corner.png",
+      "sha256": "1D6A453AFC724C84A382441DFDBE2B0702A00385DA9686E45E50CC4A93BAA7E3"
+    },
+    {
+      "file": "qa\\shop-detailing-after-front.png",
+      "sha256": "97B4D5871FCF0003913034D2EDAA880C82CAB364A28BC5D1F919FF52D2059C55"
+    },
+    {
+      "file": "qa\\shop-detailing-after-corner.png",
+      "sha256": "01D38A7DC28195B3E7AFD15D2820BD2D01E46F202BC82C2FCF5A1072BAA80369"
+    },
+    {
+      "file": "qa\\shop-detailing-after-wall.png",
+      "sha256": "E9237EBF86F583BB7E98117630B716417F62DDD3610B54F866E40DBAA40864AB"
+    },
+    {
+      "file": "qa\\shop-detailing-after-close.png",
+      "sha256": "0E899621200429D091FB5AA7CA96D23102EF00AC3D5A553668799ED265D949DF"
+    },
+    {
+      "file": "qa\\shop-detailing-after-browser.json",
+      "sha256": "562E1967A381E4B6F98F916DA36F1FFF7B06CE7A8B3260A9F5556C0E0588080E"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\outdoor-table-source\\outdoor_table_chair_set_01_1k.gltf",
+      "sha256": "1B718DEB56A9F07B260A5F95926FB7CAA5FD27918CACCA283414C840E46415F2"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\outdoor-table-source\\outdoor_table_chair_set_01.bin",
+      "sha256": "D62458C79C6C902D1195BFF875E42BF7579C6B309C6B96F9CD7543AF43170220"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\outdoor-table-source\\textures\\outdoor_table_chair_set_01_chair_arm_1k.jpg",
+      "sha256": "71AC20BB124AF45C3FF2FC5EEE11D7C9D277AC245AC14EE4BA87291BB768937D"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\outdoor-table-source\\textures\\outdoor_table_chair_set_01_chair_diff_1k.jpg",
+      "sha256": "60ED02A2C36098069235AD82937B2602E8940346F1D6A75C6386E78E03DBACB3"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\outdoor-table-source\\textures\\outdoor_table_chair_set_01_chair_nor_gl_1k.jpg",
+      "sha256": "9B57CD67775146B0865F3E5409B54661080625789042846569F7F65AB37258B3"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\outdoor-table-source\\textures\\outdoor_table_chair_set_01_table_arm_1k.jpg",
+      "sha256": "FECBE0E42DB83D6F0EE8186AFECE1FD5C3A5834FF07926C00AC18468757D4377"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\outdoor-table-source\\textures\\outdoor_table_chair_set_01_table_diff_1k.jpg",
+      "sha256": "7743A55A3A646EBDD9969E72594CB8B94E318D38956F2172A5E6934609A68BF4"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\outdoor-table-source\\textures\\outdoor_table_chair_set_01_table_nor_gl_1k.jpg",
+      "sha256": "E30E3F639BEA22013149E73BCBAEB95805BF831C7B93B80AB83A33E42672B044"
+    }
+  ]
+}

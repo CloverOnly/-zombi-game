@@ -1,0 +1,44 @@
+<!doctype html><meta charset="utf-8"><base href="/"><style>body{margin:0;background:#202b34;overflow:hidden}nav{position:fixed;top:15px;left:15px;color:#fff;background:#19252ddd;padding:10px;font:13px sans-serif}button{padding:6px;margin-right:4px}</style><canvas id="review"></canvas><nav>거리뷰 사진 기준 · 실제 게임 장면 검토<br><button id="corner">투썸 모서리</button><button id="wall">옹벽 방향</button><button id="front">포유하우스 정면</button></nav><script src="three.min.js"></script>
+<script src="assets/vendor/gltf-loader.js?v=model-upgrade-1"></script>
+<script src="assets/photo-bundle.js?v=confirmed-plan-26"></script>
+<script src="surfaces.js?v=confirmed-plan-26"></script>
+<script src="street-details.js?v=clinic-facade-1"></script>
+<script src="exterior.js?v=confirmed-plan-26"></script>
+<script src="assets/interior-bundle.js?v=confirmed-plan-26"></script>
+<script src="interior-polish.js?v=confirmed-plan-26"></script>
+<script src="rooms.js?v=confirmed-plan-26"></script>
+<script src="zombie.js?v=confirmed-plan-26"></script>
+<script src="elevator.js?v=floor6-602-route-4"></script>
+<script src="parking.js?v=confirmed-plan-26"></script>
+<script src="mart-route.js?v=confirmed-plan-26"></script>
+<script src="streets.js?v=building-fill-2"></script>
+<script src="fps-viewmodel.js?v=studio-hand-5"></script>
+<script src="hallway.js?v=fps-arm-3"></script>
+<script src="assets/mart-photo-bundle.js?v=confirmed-plan-26"></script>
+<script src="mart-interior.js?v=confirmed-plan-26"></script>
+<script src="realistic-furniture.js?v=furniture-2"></script>
+<script src="corridor-upgrade.js?v=interior-layer-2"></script>
+<script src="right-building-upgrade.js?v=shop-detail-4"></script>
+<script src="street-reference-upgrade.js?v=building-fill-2"></script>
+<script src="exterior-upgrade.js?v=clinic-facade-1"></script>
+<script src="vehicle-upgrade.js?v=sedan-1"></script>
+<script src="model-upgrade.js?v=studio-hand-5"></script>
+<script src="photo-apartment.js?v=furniture-2"></script>
+<script src="world.js?v=visual-softening-9"></script>
+<script src="audio.js?v=confirmed-plan-26"></script>
+<script src="driving.js?v=confirmed-plan-26"></script>
+<script src="street-ai.js?v=confirmed-plan-26"></script>
+<script src="chapter.js?v=fps-arm-3"></script><script>
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('review'),antialias:true});renderer.setSize(1280,720);renderer.setPixelRatio(1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.03;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+const world=createPoyuWorld(THREE,renderer),camera=new THREE.PerspectiveCamera(68,1280/720,.06,1100);camera.rotation.order='YXZ';world.encounter.attachWeapon(camera);world.scene.add(camera);
+const views={"corner":[6,-2,32,12],"wall":[60,16,46,12],"front":[35,-7,35,12]};let viewer={level:'floor1',floorY:world.elevator.groundY,x:63,z:132};
+views.close=[30,2.7,30,8.3];const b=document.createElement('button');b.id='close';b.textContent='차양·입구 근접';document.querySelector('nav').append(b);
+const inspectionStatic=true;
+function show(id){const [x,z,tx,tz]=views[id];viewer.x=x;viewer.z=z;camera.position.set(x,world.elevator.groundY+1.65,z);camera.fov=id==='front'?96:id==='close'?68:76;camera.updateProjectionMatrix();camera.lookAt(tx,world.elevator.groundY+(id==='wall'?8:id==='close'?2.25:3.2),tz);window.streetReview.view=id;world.updatePresentation(viewer,camera,1);if(!inspectionStatic||streetReview.ready)renderer.render(world.scene,camera);}
+
+document.getElementById('corner').textContent='풍전 · 보행현관 쪽';document.getElementById('wall').textContent='주차장 쪽 · 풍전 없음';document.getElementById('front').textContent='풍전 · 코너 간판';
+document.getElementById('corner').textContent='풍전 → 식후경 → 명륜';document.getElementById('wall').textContent='주차장 쪽 유지';document.getElementById('front').textContent='상가 출입구';
+window.streetReview={ready:false,view:'corner',frames:[]};for(const id of Object.keys(views))document.getElementById(id).onclick=()=>show(id);show('corner');
+let previous;function frame(t){if(previous&&streetReview.ready){streetReview.frames.push(t-previous);if(streetReview.frames.length>90)streetReview.frames.shift();}previous=t;world.updatePresentation(viewer,camera,.05);renderer.render(world.scene,camera);requestAnimationFrame(frame);}if(!inspectionStatic)requestAnimationFrame(frame);
+installPoyuModels(THREE,world).then(s=>{streetReview.models=s;streetReview.ready=true;if(inspectionStatic)show('corner');}).catch(e=>{streetReview.error=String(e);streetReview.ready=true;});
+</script>

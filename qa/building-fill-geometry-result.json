@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "blockedSkyRays": [
+    "cafe ceiling",
+    "cafe north wall",
+    "cafe west wall",
+    "glazing seam",
+    "corner closure",
+    "parking west wall",
+    "parking ceiling"
+  ],
+  "parkingExitOpen": true,
+  "unchanged": "road/floor/collision/ramp/gate/landmark/AI spawn and patrol coordinates",
+  "status": {
+    "loaded": true,
+    "models": [
+      "reference-bollard",
+      "reference-manhole",
+      "reference-horizontal-railing",
+      "reference-storefront",
+      "reference-building-closure"
+    ],
+    "bollards": 8,
+    "manholes": 7,
+    "railingPanels": 75,
+    "storefrontPanels": 9,
+    "closurePanels": 175,
+    "drawBatches": 9,
+    "triangles": 100640,
+    "pbrMaterials": [
+      {
+        "name": "Reference dark bollard",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Reference reflective bands",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "water_manhole_cover",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Reference brushed galvanized steel",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Reference storefront modular_urban_apartments_facade_glass",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Reference brushed galvanized steel",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "building-interior-lining",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "building-opaque-fascia",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "parking-turn-lining",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      }
+    ],
+    "error": null
+  }
+}

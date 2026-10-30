@@ -36,7 +36,7 @@ window.createPoyuDriving=function createPoyuDriving({world,player,onMessage=()=>
   const canPlace=(x,z,h)=>inspectPlacement(x,z,h).surface||null;
   function updateBounds(){const co=Math.abs(Math.cos(yaw)),si=Math.abs(Math.sin(yaw)),ex=L*co+W*si,ez=L*si+W*co,c=car.vehicle.collider;c.minX=v.position.x-ex;c.maxX=v.position.x+ex;c.minZ=v.position.z-ez;c.maxZ=v.position.z+ez;car.syncPoints();}
   function syncRider(){
-    const p=car.point(.42,1.20,-.47);player.x=p.x;player.z=p.z;const surface=world.driveSurface(v.position.x,v.position.z,s.level);player.floorY=surface?.y??(s.level==='floor2'?car.y:world.elevator.groundY);player.eyeHeight=p.y-player.floorY;player.level=s.level;player.inCar=true;
+    const seat=car.vehicle.driverSeatLocal||{x:.42,y:1.20,z:-.47},p=car.point(seat.x,seat.y,seat.z);player.x=p.x;player.z=p.z;const surface=world.driveSurface(v.position.x,v.position.z,s.level);player.floorY=surface?.y??(s.level==='floor2'?car.y:world.elevator.groundY);player.eyeHeight=p.y-player.floorY;player.level=s.level;player.inCar=true;
   }
   function reset(){yaw=Math.PI/2-v.rotation.y;pitch=0;steering=0;contact=null;clearTravel=0;s.speed=0;s.steering=0;s.lastBlockReason=null;s.lastCollider=null;updateBounds();}
   function update(dt,input={}){
@@ -58,7 +58,7 @@ window.createPoyuDriving=function createPoyuDriving({world,player,onMessage=()=>
       const nextYaw=yaw+s.speed/wheelbase*Math.tan(steering)*step,nextX=v.position.x+Math.cos(nextYaw)*s.speed*step,nextZ=v.position.z+Math.sin(nextYaw)*s.speed*step;
       const result=inspectPlacement(nextX,nextZ,nextYaw),surface=result.surface;
       if(surface){
-        const travel=Math.hypot(nextX-v.position.x,nextZ-v.position.z);v.position.x=nextX;v.position.z=nextZ;yaw=nextYaw;s.level=surface.level;v.position.y=surface.y-car.y;pitch=-Math.atan((surface.slopeZ||0)*Math.sin(yaw));
+        const travel=Math.hypot(nextX-v.position.x,nextZ-v.position.z);v.position.x=nextX;v.position.z=nextZ;yaw=nextYaw;s.level=surface.level;v.position.y=surface.y-car.y;pitch=-Math.atan((surface.slopeX||0)*Math.cos(yaw)+(surface.slopeZ||0)*Math.sin(yaw));
         clearTravel+=travel;if(clearTravel>.8)contact=null;s.lastBlockReason=null;s.lastCollider=null;
       }else{
         s.lastBlockReason=result.reason;s.lastCollider=result.collider?.id||null;

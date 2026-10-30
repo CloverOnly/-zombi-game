@@ -57,6 +57,14 @@ window.createPoyuAlertAudio = function createPoyuAlertAudio() {
       gain.gain.setValueAtTime(.0001,begin);gain.gain.linearRampToValueAtTime(volume,begin+.012);gain.gain.exponentialRampToValueAtTime(.0001,end);
       o.connect(gain);gain.connect(master);o.start(begin);o.stop(end+.02);
     }
+    if(kind==='hit'&&context.createBuffer&&context.createBufferSource&&context.createBiquadFilter){
+      const frames=Math.floor(context.sampleRate*.075),buffer=context.createBuffer(1,frames,context.sampleRate),samples=buffer.getChannelData(0);
+      for(let i=0;i<frames;i++)samples[i]=(Math.random()*2-1)*Math.pow(1-i/frames,2);
+      const source=context.createBufferSource(),filter=context.createBiquadFilter(),thud=context.createGain();
+      source.buffer=buffer;filter.type='lowpass';filter.frequency.value=950;
+      thud.gain.setValueAtTime(.20,context.currentTime);thud.gain.exponentialRampToValueAtTime(.001,context.currentTime+.08);
+      source.connect(filter);filter.connect(thud);thud.connect(master);source.start();
+    }
     return true;
   }
   function setPaused(value) {

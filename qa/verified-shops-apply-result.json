@@ -1,0 +1,93 @@
+{
+  "backup": "C:\\Users\\lyj\\git\\-zombi-game\\qa\\backups\\verified-shops-20261030-150106",
+  "target": "C:\\Users\\lyj\\git\\-zombi-game",
+  "finalBrowserVerified": true,
+  "errors": 0,
+  "failedRequests": 0,
+  "frameRateMeasured": false,
+  "protectedUnchangedDuringFinalCopy": true,
+  "geometryTest": "passed: unchanged map/collision/AI route; shop order; street-only layer",
+  "corridorTest": "passed: 22 meshes",
+  "files": [
+    {
+      "file": "right-building-upgrade.js",
+      "sha256": "5869261D75B8113399405B55ABFD0761BDB8B56875AB0B71E0072AC64206A257"
+    },
+    {
+      "file": "index.html",
+      "sha256": "33BE3600C613C66C65CFFDDA3A00B61D1079BF61E254F2D7AC22A3B521FBAB45"
+    },
+    {
+      "file": "qa\\right-building-test.cjs",
+      "sha256": "11670CF68D321373ED374D4011B7C57C4E690FF841D5E5E70D2F3B19AE28B8F5"
+    },
+    {
+      "file": "qa\\street-review.cjs",
+      "sha256": "4EE4411EF5F1963D078BF18AF571325D3DEAE0C12D54B8027D4F21C3A39D8D5C"
+    },
+    {
+      "file": "qa\\right-building-geometry.json",
+      "sha256": "E397001F4B9FB4785077FF45B5BF78EE8DA1FA87AC4F0F836B69DED4BE00FB54"
+    },
+    {
+      "file": "VERIFIED_SHOPFRONTS.md",
+      "sha256": "65C85478158C43E16845109AC0809AA55EB5BE550EA2D5F83925C548CCC25A15"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\LICENSE.md",
+      "sha256": "40225EF36C9F027BFCD14F50745F1C01B96F82299DDEB8FDAF5AE2CE02FD3F87"
+    },
+    {
+      "file": "qa\\export-layout-review.cjs",
+      "sha256": "29E34A6413285E3E1C73A1920A2EA633292D585DAE742B34202572A7B4486F00"
+    },
+    {
+      "file": "qa\\naver-shop-corner-reference.png",
+      "sha256": "0F910D339E499BE4CEB7CC5CF423FB37701F6CB2A4A983AF40C2AE72955126C8"
+    },
+    {
+      "file": "qa\\naver-myeongryun-storefront.png",
+      "sha256": "F6C6257D46B9A600D04CFDEB18AF115A38CF8A09D8C572F4C7B400FBFEA1F166"
+    },
+    {
+      "file": "qa\\naver-myeongryun-storefront.txt",
+      "sha256": "56D07C395C5697A6262488F1BA741A672465CAD47C6D1949201F33E0C3E7C98F"
+    },
+    {
+      "file": "qa\\verified-shops-after-corner.png",
+      "sha256": "1D6A453AFC724C84A382441DFDBE2B0702A00385DA9686E45E50CC4A93BAA7E3"
+    },
+    {
+      "file": "qa\\verified-shops-after-front.png",
+      "sha256": "4F22F7155F522EA770F8ECE746828374BCF807E704B80354AD71024E83A8FE98"
+    },
+    {
+      "file": "qa\\verified-shops-after-wall.png",
+      "sha256": "090EA69B0288A37D05907578554D3CD44FB61FBD90AD724889365390B4B6A49C"
+    },
+    {
+      "file": "qa\\verified-shops-after-browser.json",
+      "sha256": "42A5E82C0D061E428F1C20C35B30D42B59821410B3FDDB1D36C3FC893D501566"
+    },
+    {
+      "file": "qa\\layout-review-20261030\\01-current-overall-plan.png",
+      "sha256": "74E4655B475F30C97CE9C623F238245D06E5962192A9980BBD107CD926A1725F"
+    },
+    {
+      "file": "qa\\layout-review-20261030\\01-current-overall-plan.svg",
+      "sha256": "2ABE2867445C7CFFFEA739F7BFDC8826D45AC86F46F51BD5235C6BA4B9DD92B9"
+    },
+    {
+      "file": "qa\\layout-review-20261030\\02-current-overlap-detail.png",
+      "sha256": "15EC45640AD4B07F95EF04099A38088D37CD51D76110DE266F9BA471B49F9CC6"
+    },
+    {
+      "file": "qa\\layout-review-20261030\\02-current-overlap-detail.svg",
+      "sha256": "50A9261241EC0DAB62BB9C00C1A27D534E44F0C72EADA78ACA2B0673D13F8EF8"
+    },
+    {
+      "file": "qa\\layout-review-20261030\\current-layout-data.json",
+      "sha256": "73DEF3C1822557474F052915CBBB0F8E9CF27BB21F31A0218F3F37EF57215E77"
+    }
+  ]
+}

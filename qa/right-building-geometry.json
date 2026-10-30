@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "roadsCollisionAIUnchanged": true,
+  "twosomeUnchanged": true,
+  "closedShell": true,
+  "legacyHidden": true,
+  "shopOrderVerified": true,
+  "streetOnlyLayerVerified": true,
+  "bounds": {
+    "min": [
+      17.699999570846558,
+      -7.6,
+      6.8050000023883115
+    ],
+    "max": [
+      51.23,
+      14.400003973643061,
+      15.650000026077032
+    ]
+  },
+  "status": {
+    "loaded": true,
+    "target": "hospital",
+    "models": [
+      "clinic-window",
+      "clinic-entry",
+      "clinic-cornice",
+      "clinic-cladding",
+      "shop-awning",
+      "shop-metal-profile",
+      "shop-patio"
+    ],
+    "officeWindows": 72,
+    "shopWindows": 7,
+    "entries": 3,
+    "wallPanels": 213,
+    "batches": 23,
+    "triangles": 117229,
+    "materials": [
+      {
+        "name": "Clinic pale photographic cladding",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic teal glass with authored blinds",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic aluminium frame",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic plain glazed entry",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic aluminium frame.002",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic charcoal metal",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Adapted CC0 melange awning cloth",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Shop dark aluminium original normal ARM",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "outdoor_table_chair_set_01_chair",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "outdoor_table_chair_set_01_table",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Authored corrugated parking-side metal",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      }
+    ],
+    "facades": {
+      "parking": "east",
+      "pedestrian": "west",
+      "pungjeon": "west",
+      "pungjeonReturn": "north-west"
+    },
+    "error": null,
+    "parkingServicePanels": 2,
+    "canopies": 4,
+    "renderLayerMask": 8,
+    "shopsFromPoyuCorner": [
+      "풍전돈까스",
+      "보문산 식후경",
+      "명륜진사갈비"
+    ],
+    "detailing": {
+      "profiles": 24,
+      "railingPieces": 11,
+      "patioSets": 2,
+      "thresholds": 2,
+      "windowFilms": 4,
+      "slopedCanopies": 4
+    }
+  }
+}

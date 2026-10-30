@@ -1,0 +1,10 @@
+{
+  "canopy": "Adapted original CC0 wall surface + original fence profile; custom shaping, not a downloaded complete awning",
+  "cloth": "Poly Haven jogging_melange normal/roughness reused from prior hand work; brown color authored",
+  "patio": "Poly Haven outdoor_table_chair_set_01, James Ray Cock, new 1k source download",
+  "files": [
+    "shop-metal-profile.glb",
+    "shop-awning.glb",
+    "shop-patio.glb"
+  ]
+}

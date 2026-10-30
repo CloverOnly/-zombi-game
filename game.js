@@ -19,6 +19,7 @@
   renderer.shadowMap.enabled=true;
   renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   const world=window.createPoyuWorld(THREE,renderer);
+  window.poyuModelLoad=window.installPoyuModels?.(THREE,world);
   const alertAudio=window.createPoyuAlertAudio?.();
   const soundToggle=byId('soundToggle');
   const startView=world.referenceView;
@@ -36,7 +37,7 @@
   ];
   const keys=new Set();
   let running=false,finished=false,panel='',focus=null,last=performance.now(),stride=0,messageTimer=0,lastAlarm=0,endKind='',hudSignature='',streetRetry=false;
-  let mouseLookActive=false,hadPointerLock=false,previousMouse=null;
+  let mouseLookActive=false,hadPointerLock=false,previousMouse=null,impactKick=0,lastHitFlash=0;
   const mouseSensitivity=.00075,verticalSensitivity=.00042;
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
   const chapter=window.createPoyuChapter({world,player,onMessage:showMessage,onCue:type=>alertAudio?.effect?.(type),onDeath:()=>showEnding('dead'),onComplete:()=>showMessage('1층 도로 진입 · W/S 주행 · A/D 조향 · Space 제동 · 정차 후 E 하차',4500)});
@@ -158,12 +159,14 @@
     byId('staminaBar').style.width=`${Math.round(player.stamina*100)}%`;
     if(moving)stride+=dt*(sprint?12:8);
     if(!world.parking.state.inCar&&!world.parking.state.boarding&&['floor2','floor1','ramp','mart1','martB1'].includes(player.level)){const floor=world.footSurface(player.x,player.z,player.level);if(floor){player.level=floor.level;player.floorY=floor.y;}}
-    chapter.update(dt,{throttle:forward,steer:sideways||turning,brake:keys.has('Space')});
+    chapter.update(dt,{throttle:forward,steer:sideways||turning,brake:keys.has('Space'),viewMotion:{moving,sprint}});
     const car=world.parking.state;
     if(car.inCar)byId('vehicleStatus').textContent=(car.speed<-.05?'R':car.engine?'D':'P')+' · '+world.driving.speedKmh+' km/h · 차체 '+Math.round(car.condition)+'% · '+(car.engine||car.condition<=0?'E 하차':'E 시동');
+    if(chapter.state.hitFlash>lastHitFlash+.03)impactKick=1;
+    lastHitFlash=chapter.state.hitFlash;impactKick=Math.max(0,impactKick-dt*13);
     const shake=chapter.state.hurtTime>0?Math.sin(chapter.state.time*66)*.018:0;
-    camera.position.set(player.x,(player.floorY||0)+(player.eyeHeight??startView.eye)+(moving?Math.sin(stride)*.018:0)+shake,player.z);
-    camera.rotation.set(player.pitch,-player.yaw-Math.PI/2,shake*.5,'YXZ');
+    camera.position.set(player.x,(player.floorY||0)+(player.eyeHeight??startView.eye)+(moving?Math.sin(stride)*.018:0)+shake-impactKick*.028,player.z);
+    camera.rotation.set(player.pitch-impactKick*.032,-player.yaw-Math.PI/2,shake*.5+impactKick*.012,'YXZ');
     byId('roomName').textContent=roomName();
     byId('damageFlash').style.opacity=chapter.state.hurtTime>0?String(chapter.state.hurtTime*1.6):'0';
     byId('crosshair').classList.toggle('hit',chapter.state.hitFlash>0);updateHUD();
@@ -317,9 +320,11 @@
     world.updatePresentation(player,camera,dt);
     if(running&&!panel&&t-lastAlarm>38){alertAudio?.play(.55);lastAlarm=t;}
     renderer.render(world.scene,camera);
+    world.encounter.renderWeapon?.(renderer,camera);
     requestAnimationFrame(frame);
   }
   camera.position.set(player.x,startView.eye,player.z);
   camera.rotation.set(player.pitch,-player.yaw-Math.PI/2,0,'YXZ');
   requestAnimationFrame(frame);
 })();
+

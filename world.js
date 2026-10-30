@@ -1,6 +1,6 @@
 /* Offline 3D apartment scene. The floor plan is a playable approximation of the photo references. */
 window.createPoyuWorld = function createPoyuWorld(THREE, renderer) {
-  const scene = new THREE.Scene();
+  const scene = new THREE.Scene(),vehicleFleets=[];
   scene.background = new THREE.Color(0x182531);
   const colliders = [];
   const collectibles = [];
@@ -173,14 +173,14 @@ window.createPoyuWorld = function createPoyuWorld(THREE, renderer) {
   }
   const rooms=[...apartment.rooms,encounter.room,...elevator.rooms];
   const bounds={minX:0,maxX:36.6,minZ:-6.4,maxZ:22};
-  const getBounds=(level='floor4')=>level==='mart1'?{minX:170,maxX:196,minZ:407,maxZ:436}:isMart(level)||level==='martTravel'?mart.bounds:level==='floor2'?{minX:7.7,maxX:52,minZ:18,maxZ:58}:level==='ramp'?{minX:43.8,maxX:50.2,minZ:58,maxZ:86}:level==='floor1'?streets.bounds:bounds;
+  const getBounds=(level='floor4')=>level==='mart1'?{minX:170,maxX:196,minZ:407,maxZ:436}:isMart(level)||level==='martTravel'?mart.bounds:level==='floor2'?{minX:7.7,maxX:52,minZ:18,maxZ:58}:level==='ramp'?{minX:43.8,maxX:52.2,minZ:58,maxZ:78}:level==='floor1'?streets.bounds:bounds;
   const getColliders=(level='floor4')=>isMart(level)?mart.colliders[level]:level==='ramp'?streets.rampColliders:level==='floor2'?elevator.parkingColliders:level==='floor1'?elevator.groundColliders:colliders;
-  const getRooms=(level='floor4')=>isMart(level)?mart.rooms[level]:level==='ramp'?[{id:'ramp',name:'차량 경사로',kind:'ramp',minX:44,maxX:50,minZ:58,maxZ:86,labelX:47,labelZ:72}]:level==='floor2'?elevator.parkingRooms:level==='floor1'?elevator.groundRooms:rooms;
+  const getRooms=(level='floor4')=>isMart(level)?mart.rooms[level]:level==='ramp'?[{id:'ramp',name:'차량 경사로',kind:'ramp',minX:44,maxX:52,minZ:58,maxZ:78,labelX:48,labelZ:70}]:level==='floor2'?elevator.parkingRooms:level==='floor1'?elevator.groundRooms:rooms;
   const containsFloor=(x,z,level='floor4')=>(isMart(level)?mart.floors[level]:level==='ramp'?streets.rampFloors:level==='floor2'?elevator.parkingFloors:level==='floor1'?elevator.groundFloors:floorAreas).some(r=>window.poyuAreaContains(r,x,z));
   function footSurface(x,z,level='floor4'){
     if(isMart(level))return containsFloor(x,z,level)?{level,y:mart.levels[level].y}:null;
     const ramp=streets.rampSurface(x,z);if(ramp&&['floor2','floor1','ramp'].includes(level))return ramp;
-    if(level==='ramp'){if(z<58&&containsFloor(x,z,'floor2'))return {level:'floor2',y:parking.y};if(z>86&&containsFloor(x,z,'floor1'))return {level:'floor1',y:elevator.groundY};return null;}
+    if(level==='ramp'){if(z<58&&containsFloor(x,z,'floor2'))return {level:'floor2',y:parking.y};if(x>52&&containsFloor(x,z,'floor1'))return {level:'floor1',y:elevator.groundY};return null;}
     if(!containsFloor(x,z,level))return null;
     const extra=level==='floor1'?Math.max(0,...streets.floors.filter(r=>window.poyuAreaContains(r,x,z)&&!(r.excludeRoads&&streets.roads.some(a=>window.poyuAreaContains(a,x,z)))).map(r=>r.height||0)):0;
     return {level,y:level==='floor1'?elevator.groundY+extra:level==='floor2'?parking.y:0};
@@ -217,11 +217,12 @@ window.createPoyuWorld = function createPoyuWorld(THREE, renderer) {
     const cube=new THREE.CubeTexture(faces);cube.colorSpace=THREE.SRGBColorSpace;cube.needsUpdate=true;const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromCubemap(cube).texture;cube.dispose();pmrem.dispose();
   }
   function updatePresentation(player,camera,dt=.05){
+    for(const fleet of vehicleFleets)fleet.visible=fleet.userData.vehicleLevel==='floor2'?['floor2','ramp'].includes(player.level):['floor1','ramp','mart1','martB1'].includes(player.level);
     const upper=player.level==='floor4'||player.level==='riding';interior.update(upper);if(upper)camera.layers.enable(1);else camera.layers.disable(1);
     if(upper)camera.layers.disable(3);else camera.layers.enable(3);
     const insideMart=isMart(player.level)||player.level==='martTravel',atMartDoor=player.level==='floor1'&&Math.hypot(player.x-183,player.z-435)<14;
     if(insideMart||atMartDoor)camera.layers.enable(2);else camera.layers.disable(2);mart.ambient.visible=insideMart;
-    const street=player.level==='floor1'&&player.x>51||player.level==='ramp'&&player.z>79;
+    const street=player.level==='floor1'&&player.x>51||player.level==='ramp'&&player.z>72&&player.x>49;
     const hall=upper&&player.x>=16&&player.x<=36.6&&player.z>=8.2;
     const blend=Math.min(1,dt*2);hemi.intensity+=((street?.88:hall?.42:.53)-hemi.intensity)*blend;dawn.intensity+=((street?1.18:hall?.40:.72)-dawn.intensity)*blend;
     const exposure=renderer.toneMappingExposure??.94;renderer.toneMappingExposure=exposure+((street?1.03:hall?.98:.94)-exposure)*blend;
@@ -230,5 +231,5 @@ window.createPoyuWorld = function createPoyuWorld(THREE, renderer) {
     dawn.position.set(x+36,y+55,z+25);dawn.target.position.set(x,y,z);
   }
   const updateEnvironment=time=>environment?.update(time);
-  return {scene,interior,apartment,colliders,placements,collectibles,entrance,homeDoor,interiorDoors:apartment.interiorDoors,encounter,elevator,parking,streets,mart,geometryStats,texture,clock,updateTV,referenceView,environment,updateEnvironment,updatePresentation,rooms,bounds,floorAreas,containsFloor,isWalkable,footSurface,driveSurface,getBounds,getColliders,getRooms,getRoomName,hasWallBetween,doorways:apartment.doorways,itemsById:Object.fromEntries(collectibles.map(i=>[i.id,i]))};
+  return {scene,vehicleFleets,interior,apartment,colliders,placements,collectibles,entrance,homeDoor,interiorDoors:apartment.interiorDoors,encounter,elevator,parking,streets,mart,geometryStats,texture,clock,updateTV,referenceView,environment,updateEnvironment,updatePresentation,rooms,bounds,floorAreas,containsFloor,isWalkable,footSurface,driveSurface,getBounds,getColliders,getRooms,getRoomName,hasWallBetween,doorways:apartment.doorways,itemsById:Object.fromEntries(collectibles.map(i=>[i.id,i]))};
 };

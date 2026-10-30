@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "roadsCollisionAIUnchanged": true,
+  "twosomeUnchanged": true,
+  "closedShell": true,
+  "legacyHidden": true,
+  "bounds": {
+    "min": [
+      18.84999997392297,
+      -7.6,
+      8.25
+    ],
+    "max": [
+      51.23,
+      14.400003973643061,
+      15.650000026077032
+    ]
+  },
+  "status": {
+    "loaded": true,
+    "target": "hospital",
+    "models": [
+      "clinic-window",
+      "clinic-entry",
+      "clinic-cornice",
+      "clinic-cladding"
+    ],
+    "officeWindows": 60,
+    "shopWindows": 8,
+    "entries": 2,
+    "wallPanels": 176,
+    "batches": 12,
+    "triangles": 71746,
+    "materials": [
+      {
+        "name": "Clinic pale photographic cladding",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic teal glass with authored blinds",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic aluminium frame",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic plain glazed entry",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic aluminium frame.002",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic charcoal metal",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      }
+    ],
+    "error": null
+  }
+}

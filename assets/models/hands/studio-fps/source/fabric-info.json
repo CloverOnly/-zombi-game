@@ -1,0 +1,54 @@
+{
+  "type": 1,
+  "name": "Jogging Melange",
+  "authors": {
+    "colormass": "Photography",
+    "Rico Cilliers": "Processing"
+  },
+  "max_resolution": [
+    8314,
+    8308
+  ],
+  "dimensions": [
+    273.4973732349353,
+    273.2999920845032
+  ],
+  "staging": null,
+  "files_hash": "79a8208d57e8307e6c3834a35351b788f7bb557a",
+  "tags": [
+    "white",
+    "grey",
+    "tracksuit",
+    "joggers",
+    "melange",
+    "sweatpants",
+    "cozy",
+    "comfortable",
+    "cotton blend",
+    "soft",
+    "textile ",
+    "fine weave",
+    "athletic",
+    "sportswear"
+  ],
+  "description": "Free 8K material: soft grey melange cotton-blend fleece with fine weave and stretchy knit, perfect for cozy tracksuits, joggers and athletic sportswear.",
+  "date_published": 1757078158,
+  "categories": [
+    "fabric",
+    "fleece",
+    "stretchy"
+  ],
+  "category_id": "f83975ba-9406-54a6-aa26-fc6a1f4cc2a8",
+  "category": "Textiles & Leather/Knit/Fleece & Napped",
+  "attributes": {
+    "surface_use": "object",
+    "origin": "man_made",
+    "condition": [
+      "clean"
+    ]
+  },
+  "vault": "fabric",
+  "img_version": "18293497",
+  "download_count": 18075,
+  "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/jogging_melange.png?width=256&height=256&format=webp&v=18293497"
+}

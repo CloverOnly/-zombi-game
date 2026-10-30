@@ -1,0 +1,96 @@
+{
+  "backup": "C:\\Users\\lyj\\git\\-zombi-game\\qa\\backups\\pungjeon-location-20261030-141939",
+  "target": "C:\\Users\\lyj\\git\\-zombi-game",
+  "protectedUnchanged": true,
+  "finalBrowserVerified": true,
+  "browserMode": "on-demand scene inspection; not a frame-rate test",
+  "fpsMeasured": false,
+  "corridorLayerTest": {
+    "passed": true,
+    "checkedMeshes": 22,
+    "outdoorHidden": true,
+    "indoorVisible": true
+  },
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "A0BE0B002DA2134401B744160D1C7BCD6285EBAF935CF8A60D57A95B167855BC"
+    },
+    {
+      "file": "right-building-upgrade.js",
+      "sha256": "A7AD2CF7D21B7541A79E827D15F658AD2D2FB8E9F20E854C53D1358F851A9F00"
+    },
+    {
+      "file": "RIGHT_BUILDING.md",
+      "sha256": "49E0C0E47202B6069AE66C8F4F399C8EA41BDFB364A37C53BEA7D8399700E580"
+    },
+    {
+      "file": "PUNGJEON_LOCATION_CORRECTION.md",
+      "sha256": "8A1C5CD2EB9EED2EA3B10F44DF7E3F063E1F83A8EE03A77FE1FBFA050C2C718B"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\LICENSE.md",
+      "sha256": "2ECD1E97CA8DDDE85679454585765E8EB1E5AA2354A1219D70E804D742089EEC"
+    },
+    {
+      "file": "qa\\right-building-test.cjs",
+      "sha256": "E70C418F5E1A47BDC150AA668F800DC43665ACA5D98D353508975986937B5664"
+    },
+    {
+      "file": "qa\\right-building-geometry.json",
+      "sha256": "1ABB090C897FA9F59B0DDCE4D1FD1EF89828284A662E2598CF81FDA0DA9486EB"
+    },
+    {
+      "file": "qa\\street-review.cjs",
+      "sha256": "91041AEEEE87383640733537384478B9F15E05E18F22A23E86CAA38A085808E3"
+    },
+    {
+      "file": "qa\\pungjeon-before-parking.png",
+      "sha256": "DCC7C718B3E3F1BE4005B7BD9E9672F605173EA2DD4C8BCA2DE242E6A017C9C9"
+    },
+    {
+      "file": "qa\\naver-pungjeon-pedestrian-side.png",
+      "sha256": "5FAFACDE388BD4BB4AAFD75563133335687ABAEA81721785D937B7B437F629E3"
+    },
+    {
+      "file": "qa\\naver-pungjeon-pedestrian-side.txt",
+      "sha256": "31EF55529F02570F2E12D8DB6BB00381DB9E36D0C92CE78BA61361E28B955104"
+    },
+    {
+      "file": "qa\\naver-clinic-parking-face.png",
+      "sha256": "3ACE3A81E3A509EC26CB503B31F415158A142653B5B367708DD269D17B152F58"
+    },
+    {
+      "file": "qa\\naver-clinic-parking-face.txt",
+      "sha256": "4D51B5D7969734AA75648C2A528399D6CA6630E1A554579BF248B0995F955A85"
+    },
+    {
+      "file": "corridor-upgrade.js",
+      "sha256": "AE502D25CCEB03B325C2BBE3D30D52AC38074AE8B4E596D94B589973D798936C"
+    },
+    {
+      "file": "qa\\corridor-layer-test.cjs",
+      "sha256": "6A528AFF1E1E0B95E9DDB47A79CADCD769DA1E81C4615A2F882DE350D482678D"
+    },
+    {
+      "file": "qa\\pungjeon-location-geometry.json",
+      "sha256": "B866AC7E675DC13DCA8CEE685C206BAA42A7BDA7586EFC8D6B577444066B5C90"
+    },
+    {
+      "file": "qa\\pungjeon-location-after-corner.png",
+      "sha256": "0B8A84ADE7AACE11237CF804A8CFBA3A32DDEBF17E7F7D642DB663FC00C33A8A"
+    },
+    {
+      "file": "qa\\pungjeon-location-after-wall.png",
+      "sha256": "3C2096773A65AC01BBCEE7101D3B5B54A9329C9A55810C847CE037FF0287C262"
+    },
+    {
+      "file": "qa\\pungjeon-location-after-front.png",
+      "sha256": "770D5CC9A17AC37F3818D8C3720300FF3AD76531EF9CD4BB0613FBB92B50724E"
+    },
+    {
+      "file": "qa\\pungjeon-location-after-browser.json",
+      "sha256": "B3B5CADB92AC6CC8A470CB166C3BCC43CC4FCFC283E8EF30582078259E8430F1"
+    }
+  ]
+}

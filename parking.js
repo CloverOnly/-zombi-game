@@ -39,6 +39,7 @@ window.buildPoyuParking=function buildPoyuParking(T,{scene,mat,texture,y,collide
   mesh(.43,.66,.20,16.25,.35,30.5,new T.MeshStandardMaterial({color:0x7d3432,roughness:.8}));label('소화기',.26,.18,16.37,.95,30.5,Math.PI/2);
   function car(x,z,color,owned=false){
     const root=new T.Group();root.position.set(x,0,z);root.rotation.y=Math.PI/2;root.scale.setScalar(.8);root.rotation.order='YXZ';root.name=owned?'player-car':'parked-car';root.userData.dynamic=owned;group.add(root);
+    root.userData.dynamic=true;root.userData.vehicleVisual={length:4.44,color,owned};
     const paint=new T.MeshPhysicalMaterial({color,metalness:.45,roughness:.32,clearcoat:.7,clearcoatRoughness:.25});
     const rubber=new T.MeshStandardMaterial({color:0x171b1c,roughness:1}),leather=new T.MeshStandardMaterial({color:0x2b3335,roughness:.85});
     const glass=new T.MeshPhysicalMaterial({color:0xb0c4c8,transparent:true,opacity:.17,roughness:.12,metalness:.05,side:T.DoubleSide,depthWrite:false});
@@ -101,7 +102,7 @@ window.buildPoyuParking=function buildPoyuParking(T,{scene,mat,texture,y,collide
   for(const [x,z,c] of [[40,23,0x777b79],[39.7,34,0xa3aaa4],[30,44,0x445864],[40,46,0x82766b],[30,51,0x9d9b90]])car(x,z,c);
   function point(x,cy,z){vehicle.root.updateWorldMatrix(true,false);return new T.Vector3(x,cy,z).applyMatrix4(vehicle.root.matrixWorld);}
   const doorPoint={},seat={};
-  function syncPoints(){const d=point(1.12,0,-.25),s=point(.42,0,-.47);Object.assign(doorPoint,{x:d.x,z:d.z});Object.assign(seat,{x:s.x,z:s.z});}
+  function syncPoints(){const local=vehicle.driverSeatLocal||{x:.42,z:-.47},d=point(1.12,0,vehicle.driverSeatLocal?.z??-.25),s=point(local.x,0,local.z);Object.assign(doorPoint,{x:d.x,z:d.z});Object.assign(seat,{x:s.x,z:s.z});}
   // Root rotation puts the left driver side towards the clear central aisle.
   const state={unlocked:false,opened:0,targetOpen:0,boarding:false,boardTime:0,inCar:false,engine:false,blink:0,level:'floor2',speed:0,condition:100,from:null};
   function reset(player){Object.assign(state,{unlocked:false,opened:0,targetOpen:0,boarding:false,boardTime:0,inCar:false,engine:false,blink:0,level:'floor2',speed:0,condition:100,from:null});vehicle.root.position.set(27.2,0,32);vehicle.root.rotation.set(0,Math.PI/2,0,'YXZ');vehicle.door.rotation.y=0;vehicle.dashMat.emissiveIntensity=0;vehicle.lights.forEach(m=>m.emissiveIntensity=0);syncPoints();if(player){player.inCar=false;player.eyeHeight=1.4;}}

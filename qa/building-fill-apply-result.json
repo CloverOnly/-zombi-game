@@ -1,0 +1,88 @@
+{
+  "backup": "C:\\Users\\lyj\\git\\-zombi-game\\qa\\backups\\building-fill-20261030-132044",
+  "target": "C:\\Users\\lyj\\git\\-zombi-game",
+  "protectedUnchanged": true,
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "32F24C86731D4DCA1836F2497663762740DD607D58A50D8848440A6EDC1797E5"
+    },
+    {
+      "file": "streets.js",
+      "sha256": "B1D6A6CCCD17B48C03F73844298CE57245C4F33BF988789AE83E27740C618E07"
+    },
+    {
+      "file": "street-reference-upgrade.js",
+      "sha256": "0F1797D209F96F9D832E879DBD638CFC8DCBA371A9889BF6EF40386E4C905B8B"
+    },
+    {
+      "file": "BUILDING_FILL.md",
+      "sha256": "CBB4BF4562FD28606587155B0B4BF1EC0CD65D8DBDB6BE502E1016B3CEFDCE80"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\LICENSE.md",
+      "sha256": "E759388902934C830F64A87FBE76C8B727FC808BCAD11FA48F4BBB84A820A4DB"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\reference-edits\\reference-building-closure.glb",
+      "sha256": "871CDC94C0A62F3065C47B82856784E63DE22382E6E1F6198BD6E1E90016603E"
+    },
+    {
+      "file": "qa\\build-building-closure.py",
+      "sha256": "24ACA86B150BDBD30F56F113CEC712DBB5985C7A70EF7603A005DC09800EA7A2"
+    },
+    {
+      "file": "qa\\building-closure-source.blend",
+      "sha256": "C4EE8C6B01DE869F2117E277D5B86AFC4EFC92C9589FB47631FCF62269F523FC"
+    },
+    {
+      "file": "qa\\street-reference-test.cjs",
+      "sha256": "A9ED5A5647517DEBE4125C8A0E9A1A8AE95BA711B3DED8550EACDD55C049039C"
+    },
+    {
+      "file": "qa\\street-reference-test-result.json",
+      "sha256": "82DACC64991D080840D33A866E8266B67B7986602D71E2A56983E90A0DC5EFD2"
+    },
+    {
+      "file": "qa\\street-review.cjs",
+      "sha256": "09E1DA6B628164F3AC99AEF580AB43ABF9A817AA59F125B074DA174D63A61996"
+    },
+    {
+      "file": "qa\\building-fill-geometry-result.json",
+      "sha256": "3C29EA27D376AE3CF172DA3DD8885818B5FBB8DBCA1065B23F6BAB3BC9B431DB"
+    },
+    {
+      "file": "qa\\building-fill-after-corner.png",
+      "sha256": "0844A4CC460E0EFE49839878C52ABBEF411EFBE0BED8006B1667AE70E94B71B8"
+    },
+    {
+      "file": "qa\\building-fill-after-front.png",
+      "sha256": "E903D3E381A1EA00571952D910D240FAD0FF035ACD79C6310A772A08C728B7F9"
+    },
+    {
+      "file": "qa\\building-fill-after-wall.png",
+      "sha256": "F7CEB81A03AE0DE7D1BAED8E011E5C1B21B3BE7B00BC2347AA352CA40CE5C343"
+    },
+    {
+      "file": "qa\\building-fill-before-corner.png",
+      "sha256": "60D9FD62518966BDCF3A35BA31B151960B875F4D5DEF269111CF7E3BD1F79FCB"
+    },
+    {
+      "file": "qa\\building-fill-before-front.png",
+      "sha256": "6F72778A92F0B975A54CE239DC7EC560DE9BE4719355F213DF543B29E66C8386"
+    },
+    {
+      "file": "qa\\building-fill-before-wall.png",
+      "sha256": "84D858320B95CEB77B2B372A22911841501D2B2A7235897194F17C208F27F60F"
+    },
+    {
+      "file": "qa\\building-fill-after-browser.json",
+      "sha256": "E8676F9E13DAC4AF6DEAD97760F4B647836C7FC155DA51AED94C3798853100C1"
+    },
+    {
+      "file": "qa\\building-fill-before-browser.json",
+      "sha256": "5CDAB63E3032874D16BCB80EEF19511E51AB1DB7B0F55CBD2C6753F0E4430286"
+    }
+  ],
+  "finalBrowserVerified": true
+}

@@ -36,7 +36,7 @@ vm.runInNewContext(fs.readFileSync(__dirname+'/photo-apartment.js','utf8'),{wind
 vm.runInNewContext(fs.readFileSync(__dirname+'/world.js','utf8'),{window,document,Math,console});
 vm.runInNewContext(fs.readFileSync(__dirname+'/chapter.js','utf8'),{window,document,Math,console});
 let frame;
-vm.runInNewContext(fs.readFileSync(__dirname+'/game.js','utf8'),{window,document,Math,console,performance:{now(){return 0;}},setTimeout(){return 1;},clearTimeout(){},requestAnimationFrame(fn){frame=fn;}},{filename:'game.js'});
+vm.runInNewContext(fs.readFileSync(__dirname+'/game.js','utf8').replace('const world=window.createPoyuWorld(THREE,renderer);','const world=window.createPoyuWorld(THREE,renderer);window.__testWorld=world;'),{window,document,Math,console,performance:{now(){return 0;}},setTimeout(){return 1;},clearTimeout(){},requestAnimationFrame(fn){frame=fn;}},{filename:'game.js'});
 const key=(code,repeat=false)=>listeners.keydown({code,repeat,preventDefault(){}});
 const up=code=>listeners.keyup({code});
 let now=0;const tick=ms=>{const end=now+ms;while(now<end){now+=16;frame(now);}};
@@ -65,7 +65,8 @@ key('KeyE');tick(650);key('KeyW');tick(730);up('KeyW');tick(2300);
 assert.match(get('objective').textContent,/신발장/,'leaving the entrance triggers the retreat objective');
 walkTo(14.4,10.80);lookAt(14.75,11.02);key('KeyE');tick(650);lookAt(14.95,11.45);key('KeyE');tick(32);
 assert.match(get('progress').textContent,/야구방망이 장착/,'cabinet interaction equips the bat in game');
-assert(renderedCamera.getObjectByName('equipped-baseball-bat').visible,'equipped bat is visible in the first-person camera');
+// This renderer-free harness does not load GLTF assets. The rig/browser checks cover the visible model.
+assert(!renderedCamera.getObjectByName('equipped-baseball-bat').visible,'unloaded FPS assets must not show a primitive substitute');
 key('KeyF');tick(230);
 assert(get('ending').classes.has('hidden'),'practice swing does not end the game');
 walkTo(14.4,10.80);walkTo(15.02,10.80);lookAt(15.93,10.80);
@@ -102,7 +103,7 @@ assert(!get('vehicleStatus').classes.has('hidden'));assert(!renderedCamera.getOb
 const seatX=renderedCamera.position.x;key('KeyW');tick(350);up('KeyW');assert.equal(renderedCamera.position.x,seatX,'seated player cannot walk through the car');
 key('KeyE');tick(1800);assert(get('ending').classes.has('hidden'),'engine starts without interrupting driving');
 get('driveCheckpointButton').click();tick(32);key('KeyE');tick(1800);
-const carModel=renderedCamera.parent.getObjectByName('player-car'),route=[[44,32],[47,40],[47,54],[47,74],[47,89],[52,94],[59.3,94],[60.5,113]];
+const carModel=renderedCamera.parent.getObjectByName('player-car'),route=[[44,32],[47,40],[47,54],[47,67],[47,74],[51,75],[55,75],[58,76],[60,80],[60.5,113]];
 let waypoint=0;
 const hold=(code,down)=>{if(down)key(code);else up(code);};
 for(let t=0;t<150000&&waypoint<route.length;t+=64){
@@ -112,10 +113,10 @@ for(let t=0;t<150000&&waypoint<route.length;t+=64){
   hold('KeyA',angle<-.045);hold('KeyD',angle>.045);hold('KeyW',speed<limit);hold('Space',speed>limit+1);tick(64);
 }
 for(const code of ['KeyW','KeyA','KeyD'])up(code);key('Space');tick(900);up('Space');
-console.log('Keyboard drive:',{waypoint,x:carModel.position.x,z:carModel.position.z,room:get('roomName').textContent});
+console.log('Keyboard drive:',{waypoint,x:carModel.position.x,z:carModel.position.z,room:get('roomName').textContent,level:window.__testWorld.parking.state.level,block:window.__testWorld.parking.state.lastBlockReason,collider:window.__testWorld.parking.state.lastCollider,gate:window.__testWorld.streets.state});
 assert.equal(waypoint,route.length,'actual keyboard steering descends the ramp and reaches the street');assert.match(get('roomName').textContent,/지족로364번길/);assert(get('ending').classes.has('hidden'),'street remains playable');
 const stoppedX=carModel.position.x,stoppedZ=carModel.position.z;key('Escape');key('KeyW');tick(1200);up('KeyW');assert.equal(carModel.position.x,stoppedX);assert.equal(carModel.position.z,stoppedZ);get('resumeButton').click();tick(32);
-key('KeyM');assert(!get('mapOverlay').classes.has('hidden'));key('KeyM');key('KeyE');tick(48);assert(get('vehicleStatus').classes.has('hidden'),'E exits a stopped vehicle');assert(renderedCamera.getObjectByName('equipped-baseball-bat').visible,'bat is available on foot outdoors');
+key('KeyM');assert(!get('mapOverlay').classes.has('hidden'));key('KeyM');key('KeyE');tick(48);assert(get('vehicleStatus').classes.has('hidden'),'E exits a stopped vehicle');assert(!renderedCamera.getObjectByName('equipped-baseball-bat').visible,'missing GLTF assets do not show a primitive substitute outdoors');
 document.exitPointerLock();
 for(const request of [undefined,()=>{throw new Error('pointer lock unavailable');},()=>({catch(fn){fn(new Error('pointer lock denied'));}})]){
   get('view').requestPointerLock=request;get('checkpointButton').click();listeners.pointerlockerror();tick(32);
@@ -145,3 +146,4 @@ walkTo(183,432.5);lookAt(183,433.8);key('KeyE');tick(32);assert.match(get('roomN
 console.log('smoke passed: apartment/combat/dialogue/elevator, actual keyboard driving, map/mouse look, mart checkpoint, keyboard travelator ride, B1 exploration, upstairs return and exit');
 
 get('photoTourButton').click();tick(32);assert.equal(get('roomName').textContent,'거실 · 주방');assert.match(get('progress').textContent,/0 \/ 6/);assert.equal(renderedCamera.fov,72);key('KeyM');assert.equal(get('mapTitle').textContent,'6층 602호 · 공용 복도');key('KeyM');get('startButton').click();tick(32);assert.equal(renderedCamera.fov,68);assert.equal(get('roomName').textContent,'안방');assert.match(get('chapterLabel').textContent,/6F 602호/);console.log('Photo tour and normal-start reset passed');
+

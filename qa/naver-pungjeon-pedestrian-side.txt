@@ -1,0 +1,1 @@
+Browser tab: 2, Title: "파노라마 - 네이버지도", URL: "https://map.naver.com/p?c=17.00,0,0,0,adh&p=9HFpXSeej2Av6rXIjrgIbw,11,-9.75,64.69,Float".

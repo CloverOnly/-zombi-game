@@ -1,0 +1,175 @@
+{
+  "backup": "C:\\Users\\lyj\\git\\-zombi-game\\qa\\backups\\street-detail-20261030-114035",
+  "target": "C:\\Users\\lyj\\git\\-zombi-game",
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "2C8C92F7715973EBAE2F6E135BB3691A95C5E79EC1C85D354DF92CA11CB84AE0"
+    },
+    {
+      "file": "streets.js",
+      "sha256": "24DE4DCDB6C195E5C0AA9C6BD9BE85BBFE9209F1C70712DF23B5D96EF8A11D85"
+    },
+    {
+      "file": "street-details.js",
+      "sha256": "D847B6E5A79908F4652E69E6CC7784688EA7F685C896E7581639C1F0CCC6B73A"
+    },
+    {
+      "file": "exterior-upgrade.js",
+      "sha256": "2AAB4FC35CE4A6B5D570D01B0269F9D8E9C09617B2443E8AB81E32430C7A3D33"
+    },
+    {
+      "file": "street-reference-upgrade.js",
+      "sha256": "254926877520540508F44E16C41DFD12BA1F6AB65F3ADBE0BFB3E6532194CC83"
+    },
+    {
+      "file": "STREET_DETAIL_PASS.md",
+      "sha256": "DAC8BA67421AC4A4595BB7B53923F24DA58369F49305CC82F32DD356F16FF3A7"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\LICENSE.md",
+      "sha256": "3D258787BFF969F5E0F25E5876755A1EEEAE56C0CC5BAFAACB26A5A459F2AC1D"
+    },
+    {
+      "file": "qa\\build-reference-street.py",
+      "sha256": "A5BA11D13DDDC02C0A703F9B0C56D7806EC9944F0636F26419DB085282B1C61E"
+    },
+    {
+      "file": "qa\\street-reference-test.cjs",
+      "sha256": "20621AA9F1CB3CCD3DB65C57C5CCFCCE437FD49136EB24E506A18CDECC282B1B"
+    },
+    {
+      "file": "qa\\street-reference-test-result.json",
+      "sha256": "C4179CBB7D0CC89B403BB33F98186545C0E4B907DCCCBB438BB95E39F3AA7E1B"
+    },
+    {
+      "file": "qa\\street-review.cjs",
+      "sha256": "DDF1EAA63A1CDD0EA3F2DB2ECD894F582932A594EDAC5FF1E9BA9A4C1F195F3B"
+    },
+    {
+      "file": "qa\\street-review.html",
+      "sha256": "C36EB9D2AA0377AFED1E9A94992C4A9CDA3E09145D966C55B874DC32D0736F89"
+    },
+    {
+      "file": "qa\\street-detail-after-corner.png",
+      "sha256": "8BE6C4EACB83E5B7F924E1AB9AA36B61D61355C2A60EBBC6FE11AD6B4D91D3EB"
+    },
+    {
+      "file": "qa\\street-detail-after-front.png",
+      "sha256": "6F72778A92F0B975A54CE239DC7EC560DE9BE4719355F213DF543B29E66C8386"
+    },
+    {
+      "file": "qa\\street-detail-after-wall.png",
+      "sha256": "72196562E1753FE03B62D88E4726EFDA9E7A2525100864F876474E58E5453479"
+    },
+    {
+      "file": "qa\\street-detail-before-corner.png",
+      "sha256": "0A33D9A2B8B3963951ADF59F96FB4A57A8CA55D9672C646A28BB62B8129FFAA3"
+    },
+    {
+      "file": "qa\\street-detail-before-front.png",
+      "sha256": "BEDBD0D823FE957805817CB679EBE4D7B179AE8460FB15CF77FCCC7BA8A51B79"
+    },
+    {
+      "file": "qa\\street-detail-before-wall.png",
+      "sha256": "02CA829FCA13DD1B014D233442A1FBD8AC8F29308B54AB299677B199CB09C0A6"
+    },
+    {
+      "file": "qa\\street-detail-after-browser.json",
+      "sha256": "9D449728954E4E93BDE2294C2771CABBCF0CA5CD36CDA10DC37B31FF53E92C44"
+    },
+    {
+      "file": "qa\\street-detail-before-browser.json",
+      "sha256": "6D7853E845282D40C979783BFF4261753214B4C72F756F661D31325DC6522BA3"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\download-manifest.json",
+      "sha256": "9F40E7406AF33368EE63BE8826ED1F9C9EB18734DF1CDA77921C513D355BC715"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\modular_chainlink_fence_1k.gltf",
+      "sha256": "4204F151F809B4ABD41EA0B18B1B6A5D9C23E6BCC0B6A81E44D03690F26604E9"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\modular_chainlink_fence.bin",
+      "sha256": "BE9EA1817089FD35B0927A8271358F6ABD2EC80B306A085DE435613D936FCB9A"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\source-info.json",
+      "sha256": "D255ECAD3E90D043D71D46A64C6F8C0DDE94F37B936C0E6E1424D27B45F2FB98"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\textures\\modular_chainlink_fence_posts_arm_1k.jpg",
+      "sha256": "1694ECC2746DDAA93951EA5D2F2B830F544ADF929F7AC9FAE855F8B8FDFBAD50"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\textures\\modular_chainlink_fence_posts_diff_1k.jpg",
+      "sha256": "EC273FEDEF04FBCAC26460B996BEEECEEFF3F91C1BEA73ED2C6DB1D0FDB30B73"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\textures\\modular_chainlink_fence_posts_nor_gl_1k.jpg",
+      "sha256": "B43B8214C90A55BB84222D2A27430B31080D68DC14879632B86DBD316CB5F060"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\textures\\modular_chainlink_fence_wire_arm_1k.jpg",
+      "sha256": "88AF8364890B0645CD730ECA11B30E6CD1C7578AD3AA1F012BB84915B9BE5A03"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\textures\\modular_chainlink_fence_wire_diff_1k.jpg",
+      "sha256": "79253847A00B67A616148D753DF8F4E44BA4615F848B82310426618B5A8DD79B"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\modular_chainlink_fence\\textures\\modular_chainlink_fence_wire_nor_gl_1k.jpg",
+      "sha256": "5CBF280F80E948DE2422F0BB2FE2223A3B6F8E6FC75F54B00CD8D3E070938230"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\water_manhole_cover\\download-manifest.json",
+      "sha256": "772C29B572FAA871ED44B1F355849BDFBF63617F8BDB6A552CE0470131EC29B5"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\water_manhole_cover\\source-info.json",
+      "sha256": "05FFB631FB305E91C1439C31BD2F3CAD5CF5BACDAB815E94E81C510B2417DE14"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\water_manhole_cover\\water_manhole_cover_1k.gltf",
+      "sha256": "9D692740CB6E70CEE977A6CCB54A270271B81250B47468E9EF6387BD58215CF9"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\water_manhole_cover\\water_manhole_cover.bin",
+      "sha256": "ADA713D1F6F879164D3475E2EE18D69B4C4ECC8F100126E3921B7B3EA42C9267"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\water_manhole_cover\\textures\\water_manhole_cover_arm_1k.jpg",
+      "sha256": "6D5856A467C9286FC993F2BD80BB5C30464FD8A127C8418FC8FC6C34BC54231D"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\water_manhole_cover\\textures\\water_manhole_cover_diff_1k.jpg",
+      "sha256": "CB78919F60C929125317F19F9ECBBA9F21089B7C0D6E0428C68F6FA401E6E720"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\water_manhole_cover\\textures\\water_manhole_cover_nor_gl_1k.jpg",
+      "sha256": "E2C1EAC759B8C7430FFC8C59A45F4DB98F890F9A22C3D968605A81E99E92BF43"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\reference-edits\\reference-bollard.glb",
+      "sha256": "23CE9D538EDF34B8705B0B732E044AB21A786BD904C14C991A2650C0EF71E870"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\reference-edits\\reference-horizontal-railing.glb",
+      "sha256": "C3881A84E61AAB1E0719A0DB9C457F357BE8E33958E4E0C726AAA1192999B8D4"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\reference-edits\\reference-manhole.glb",
+      "sha256": "BA46752582046754F71C008D292B1B6543CADCB222AAFFC2BB5116888D1CF536"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\reference-edits\\reference-storefront.glb",
+      "sha256": "9147F5C424A08DF7DD7F56F3F18D21DA1FF930A18E9A397F428AB7672FEB74C0"
+    },
+    {
+      "file": "assets\\models\\exterior\\street-detail\\reference-edits\\reference-street-editable.blend",
+      "sha256": "4257BC6C70EDC66E9B04ED742534F70F82DCF17609627E16CA83606E8F5509D0"
+    }
+  ],
+  "protectedUnchanged": true
+}

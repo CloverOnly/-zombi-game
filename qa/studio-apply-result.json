@@ -1,0 +1,104 @@
+{
+  "target": "C:\\Users\\lyj\\git\\-zombi-game",
+  "backup": "C:\\Users\\lyj\\git\\-zombi-game\\qa\\backups\\studio-hand-20261030-110744",
+  "files": [
+    {
+      "file": "fps-viewmodel.js",
+      "sha256": "8A429795FE56B13E79205B40EB3F09848A9CC39F0849B99BB5FC526077386007"
+    },
+    {
+      "file": "model-upgrade.js",
+      "sha256": "F106E4B9002CA9BEDBC94C02F6BA40251254792078BA981202A482E89B7AA016"
+    },
+    {
+      "file": "index.html",
+      "sha256": "09059920BF9DD1873CB85AACDF8D69E64E6FF4F68F8111FA0DE30BD21B0F4FEF"
+    },
+    {
+      "file": "HAND_FORM_REBUILD.md",
+      "sha256": "A9F543061C109CDD40D146C26B6D3D31E2687E2130BD2D5460C3B35059E1EF43"
+    },
+    {
+      "file": "qa\\fps-rig-test.cjs",
+      "sha256": "467C93021A9062C7EF2356F732C2CE78250E209F175B59F920A0BFFE0B81C0F9"
+    },
+    {
+      "file": "qa\\studio-rig-result.json",
+      "sha256": "5A4DEE255DF11C6EC10BE37D66F05532EDE857C2B8F8DCE469EDD0F4384E8AF7"
+    },
+    {
+      "file": "qa\\hand-form-before.jpg",
+      "sha256": "BE9D06096DAC7C848DE9FB62D5BD3E92DA5AE1A3773C938D83D5A088F09F60B2"
+    },
+    {
+      "file": "qa\\hand-form-after.jpg",
+      "sha256": "5C8FC1A2674D89B4998447387089545A8AE4770CD2C4C87125F873D9CE4B41CE"
+    },
+    {
+      "file": "qa\\studio-game-idle.jpg",
+      "sha256": "607107A7CF0C463F19D9186BD141DE32F56E0EDF0CFBC10A425475DDC64272CF"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\arms.bin",
+      "sha256": "6A8E6A9E92336EF58EEB816F1D2E87D70284288E07E45FB832124A9824DCE65A"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\arms.gltf",
+      "sha256": "1015AF44F9BF90929BC459D7FC2D367F6F266CA897E0F5D48C1F72DAA84E55BA"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\handle-profile.json",
+      "sha256": "1094AA7659E9071F08807D9608E38E8E6A4A7DDF198D744EEE11B515D2B2CC4F"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\jogging_melange_diff_1k.png",
+      "sha256": "6B7B9E322D35D2A45E1F1580E07B1B317F742D882EB069FE161E89F15CB7E25C"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\jogging_melange_nor_gl_1k.png",
+      "sha256": "A2718A79A22F9574D669A8DC08FC31EE151A11B84B4C11CC7FA0429A66C56127"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\jogging_melange_rough_1k.png",
+      "sha256": "56D94993D4A1F614A14EB8EB10CE98B10875503E48027DD7758DEA5BCD947B28"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\LICENSE.md",
+      "sha256": "209E0FA75EC77187B8375FFD4A39F78EB46AB789E5AEF163E9DDC068F0BD7F61"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\studio_skin_color.png",
+      "sha256": "19A9DDB7ED7A9D7CFC2E13FC5E397C1BE6F024ED1CDD5667599CAB46B7A9CAFC"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\studio_skin_normal.png",
+      "sha256": "D36799931FF0D88CE70A226EF04D04E67E7C27773851CF41CFFA568AA05D4801"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\studio_skin_roughness.png",
+      "sha256": "71DEDBB44E966E51677A7A7B918342CA4F70E6442E3EE3ED90317CC5A2427116"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\source\\fabric-files.json",
+      "sha256": "516D45CF4CC9C4B783032BF5DD1F1D6581AE91652B58BD341F8A8D6BED48CA90"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\source\\fabric-info.json",
+      "sha256": "8C24B1809D18297500ACA1BA9F6E93BF35178D6EF7151D146E3361576254130E"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\source\\fps-arms.7z",
+      "sha256": "31F6C7BD5CAEA8856C4AAFCA8461F38A3C8BFDD3D8F05C898E403B9475E54562"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\source\\hand-rigged.blend",
+      "sha256": "100B4AF646BF93D7D0C24B27C93FA94DE122B20DB822331EAB9EBEA5568270BF"
+    },
+    {
+      "file": "assets\\models\\hands\\studio-fps\\source\\studio-hand-original.blend",
+      "sha256": "9D0327B0C3BA899A8389C982B4CFA5B9DAC072EF6E69092929D8265F6CDD676C"
+    }
+  ],
+  "protectedFilesUnchanged": true,
+  "finalBrowserRecheck": "unavailable: browser connection reset / localhost timeout"
+}

@@ -116,5 +116,39 @@ window.createPoyuZombie=function createPoyuZombie(T,{scene,texture,worker=false,
     }
   }
   weld(rig);
-  return {root,rig,head,headPivot,legs,arms,pose};
+  let modelMixer=null,modelActions=null,modelState='',modelTime=null;
+  const builtInPose=pose;
+  function useModel(gltf){
+    if(!gltf?.scene||!gltf.animations?.length)throw new Error('Animated zombie model is incomplete');
+    const clips={};for(const name of ['Idle','Walk','Attack','Death']){
+      const clip=T.AnimationClip.findByName(gltf.animations,name);
+      if(!clip)throw new Error('Zombie animation missing: '+name);
+      clips[name]=clip;
+    }
+    const visual=new T.Group();visual.name='rigged-zombie-model';visual.add(gltf.scene);
+    const bounds=new T.Box3().setFromObject(gltf.scene),size=bounds.getSize(new T.Vector3());
+    if(!Number.isFinite(size.y)||size.y<=0)throw new Error('Zombie model has invalid bounds');
+    const scale=gltf.userData?.poyuFixedScale||1.68/size.y;gltf.scene.scale.setScalar(scale);
+    visual.updateMatrixWorld(true);
+    const fitted=new T.Box3().setFromObject(gltf.scene),center=fitted.getCenter(new T.Vector3());
+    gltf.scene.position.set(-center.x,gltf.userData?.poyuFloorOffset??-fitted.min.y,-center.z);
+    visual.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+    root.add(visual);
+    modelMixer=new T.AnimationMixer(gltf.scene);modelActions=Object.fromEntries(Object.entries(clips).map(([name,clip])=>[name,modelMixer.clipAction(clip)]));
+    modelActions.Attack.setLoop(T.LoopOnce,1);modelActions.Attack.clampWhenFinished=true;
+    modelActions.Death.setLoop(T.LoopOnce,1);modelActions.Death.clampWhenFinished=true;
+    rig.visible=false;modelState='';modelTime=null;
+  }
+  function animatedPose(time,moving,windup,dead,deathTime,strike=0){
+    if(!modelMixer){builtInPose(time,moving,windup,dead,deathTime,strike);return;}
+    const state=dead?'Death':(strike>.08||windup>.35)?'Attack':moving?'Walk':'Idle';
+    if(state!==modelState){
+      const next=modelActions[state];next.reset().play();
+      if(modelState)modelActions[modelState].fadeOut(.16);
+      next.fadeIn(.16);modelState=state;
+    }
+    const dt=modelTime===null?0:Math.max(0,Math.min(.05,time-modelTime));modelTime=time;
+    modelMixer.update(dt);
+  }
+  return {root,rig,head,headPivot,legs,arms,pose:animatedPose,useModel,get modelLoaded(){return !!modelMixer;}};
 };

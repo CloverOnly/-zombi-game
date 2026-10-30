@@ -1,0 +1,7 @@
+Browser tab: 2, Title: "파노라마 - 네이버지도", URL: "https://map.naver.com/p?c=17.00,0,0,0,adh&p=0nG_nrxiEedlsyztTS9Few,-51.28,10,64.69,Float".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 119
+~0 AXWebArea 파노라마 - 네이버지도, URL: map.naver.com/p?c=17.00,0,0,0,adh&p=0nG_nrxiEedlsyztTS9Few,-51.28,10,64.69,Float
+~					95 button 최대 크기
+~						96 text 최대 크기
+The focused UI element is 119 container

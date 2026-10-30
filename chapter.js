@@ -230,9 +230,11 @@ window.createPoyuChapter=function createPoyuChapter({world,player,onMessage=()=>
     else if((player.level||'floor4')!=='floor4')state.windup=0;
     if(state.enemyHP<=0)state.deathTime+=dt;
     view.zombie.pose(state.time*(state.phase==='ambush'?1.65:1),state.enemyMoving,state.windup>0?1-state.windup/.55:0,state.enemyHP<=0,state.deathTime,state.enemyStrike>0?Math.sin(state.enemyStrike/.3*Math.PI):0);
-    view.weaponPose(state.hasBat&&!world.parking.state.inCar&&!world.parking.state.boarding,state.swing<0?-1:state.swing/.42,state.time);
+    view.weaponPose(state.hasBat&&!world.parking.state.inCar&&!world.parking.state.boarding,state.swing<0?-1:state.swing/.42,state.time,state.hitFlash,input.viewMotion);
   }
   function blocksPlayer(x,z){return world.streetAI.blocksPlayer(x,z)||((player.level||'floor4')==='floor4'&&enemy.visible&&state.enemyHP>0&&(state.phase==='combat'||state.phase==='ambush')&&Math.hypot(x-enemy.position.x,z-enemy.position.z)<.55);}
   reset();
   return {state,reset,update,interact,attack,getTargets,objective,blocksPlayer,get dialogue(){return state.phase==='dialogue'?{...conversation[state.dialogueIndex],index:state.dialogueIndex+1,total:conversation.length}:null;},get movementLocked(){return ['retreat','dialogue','boarding'].includes(state.phase)||state.doorLock>0||world.elevator.movementLocked||world.parking.movementLocked||world.mart.movementLocked;},get swingProgress(){return state.swing<0?-1:state.swing/.42;}};
 };
+
+

@@ -1,0 +1,4 @@
+Browser tab: 2, Title: "파노라마 - 네이버지도", URL: "https://map.naver.com/p?c=17.00,0,0,0,adh&p=frOXxn1K994dhCPdRwdTYQ,11,-9.75,64.69,Float".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~0 AXWebArea 파노라마 - 네이버지도, URL: map.naver.com/p?c=17.00,0,0,0,adh&p=frOXxn1K994dhCPdRwdTYQ,11,-9.75,64.69,Float
+The focused UI element is 82 button 오른쪽

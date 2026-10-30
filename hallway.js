@@ -102,12 +102,14 @@ window.buildPoyuHallway=function buildPoyuHallway(THREE,kit){
   const nearStairExit=plane(.30,.20,19.86,2.36,15.4,exitMat,-Math.PI/2);hallway.add(nearStairExit);
   const farStairExit=plane(.30,.20,32.14,2.36,16.2,exitMat,Math.PI/2);hallway.add(farStairExit);
   const extinguisher=new THREE.MeshStandardMaterial({color:0xb62c27,roughness:.4});
-  part(.28,.035,.28,20,.025,8.8,extinguisher,'lobby-extinguisher-base');cylinder(.075,.085,.40,20,.23,8.8,extinguisher,20);line(20,.43,8.8,20,.52,8.8,mat.black,.014);line(19.98,.48,8.8,19.95,.30,8.91,mat.black,.012);
+  const legacyExtinguisher=[part(.28,.035,.28,20,.025,8.8,extinguisher,'lobby-extinguisher-base'),cylinder(.075,.085,.40,20,.23,8.8,extinguisher,20),line(20,.43,8.8,20,.52,8.8,mat.black,.014),line(19.98,.48,8.8,19.95,.30,8.91,mat.black,.012)];
   part(.31,.66,.025,30.5,1.15,13.29,doorPaint,'hall-fire-panel');const led=sphere(.023,30.5,1.38,13.305,new THREE.MeshBasicMaterial({color:0xff3333}));hallway.add(led);
   const finishes={paint,floor:floorMat,ceiling:ceilingMat,door:doorPaint,trim,metric};
 
+  const batVisuals=[];
   function makeBat(){
     const b=new THREE.Group();
+    b.name='baseball-bat-visual';batVisuals.push(b);
     function part(geo,material,x,y,z){const m=new THREE.Mesh(geo,material);m.position.set(x,y,z);m.castShadow=true;b.add(m);return m;}
     part(new THREE.CylinderGeometry(.022,.018,.32,16),mat.wood,0,.16,0);
     part(new THREE.CylinderGeometry(.055,.022,.64,20),mat.paleWood,0,.64,0);
@@ -116,23 +118,42 @@ window.buildPoyuHallway=function buildPoyuHallway(THREE,kit){
     for(let i=0;i<9;i++){const ring=part(new THREE.TorusGeometry(.022,.004,5,16),mat.black,0,.06+i*.023,0);ring.rotation.x=Math.PI/2;}
     return b;
   }
+  function useBatModel(gltf){
+    if(!gltf?.scene)throw new Error('Baseball bat model is missing');
+    const measure=new THREE.Box3().setFromObject(gltf.scene),size=measure.getSize(new THREE.Vector3());
+    if(!Number.isFinite(size.y)||size.y<=0)throw new Error('Baseball bat has invalid bounds');
+    for(const target of batVisuals){
+      const model=gltf.scene.clone(true),holder=new THREE.Group();holder.name='real-baseball-bat';holder.add(model);
+      model.scale.setScalar(.96/size.y);holder.updateMatrixWorld(true);
+      const bounds=new THREE.Box3().setFromObject(model),center=bounds.getCenter(new THREE.Vector3());
+      model.position.set(-center.x,-bounds.min.y,-center.z);
+      holder.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+      for(const child of target.children)child.visible=false;
+      target.add(holder);
+    }
+  }
   const cabinet=kit.buildEntryStorage(makeBat);
 
   const zombie=window.createPoyuZombie(THREE,{scene,texture});
   const held=new THREE.Group();held.name='equipped-baseball-bat';held.visible=false;const heldBat=makeBat();held.add(heldBat);
-  const sleeve=new THREE.MeshStandardMaterial({color:0x34414a,roughness:1}),handSkin=new THREE.MeshStandardMaterial({color:0xb29b86,roughness:.9});
-  for(const y of [.11,.22]){const hand=new THREE.Mesh(new THREE.SphereGeometry(.052,14,10),handSkin);hand.position.set(.014,y,.025);hand.scale.set(1,.7,1.2);held.add(hand);}
-  const forearm=new THREE.Mesh(new THREE.CapsuleGeometry(.055,.26,4,12),sleeve);forearm.position.set(.07,-.06,.17);forearm.rotation.x=.8;held.add(forearm);
-  held.traverse(o=>{if(o.isMesh){o.material=o.material.clone();o.material.depthTest=false;o.material.depthWrite=false;o.castShadow=false;o.renderOrder=1000;}});
-  function attachWeapon(camera){camera.add(held);}
-  function weaponPose(hasBat,swing,time){
-    held.visible=hasBat;const a=swing>=0?Math.sin(swing*Math.PI):0;
-    held.position.set(.38-a*.22,-.54+Math.sin(time*2)*.006,-.72-a*.15);held.rotation.set(-.15+a*.45,-.12-a*.35,-.22+a*1.45);
+  let fpsView=null;
+  held.visible=false;
+  function useHandModel(gltf){
+    if(!window.createPoyuFPSViewModel)throw new Error('FPS viewmodel controller missing');
+    fpsView=window.createPoyuFPSViewModel(THREE,held,heldBat,gltf);
+    return fpsView.info;
   }
+  function attachWeapon(camera){camera.add(held);}
+  function weaponPose(hasBat,swing,time,impact=0,movement={}){
+    if(fpsView)fpsView.pose(hasBat,swing,time,impact,movement);
+    else held.visible=false;
+  }
+  function renderWeapon(renderer,camera){fpsView?.render(renderer,camera);}
   function reset(){
     cabinet.reset();zombie.root.visible=false;zombie.root.position.set(18.35,0,homeDoor.point.z);zombie.rig.rotation.set(0,0,0);homeDoor.reset();held.visible=false;
     for(const n of neighbours)n.indicator.material.color.setHex(0x6d817b);
   }
   reset();
-  return {hallway,finishes,cabinet,zombie,neighbours,held,attachWeapon,weaponPose,reset,markInspected(id){neighbours.find(n=>n.id===id)?.indicator.material.color.setHex(0x8dc8a9);},room:{id:'common-hallway',name:'공용 복도 · 승강기 홀',kind:'corridor',minX:16,maxX:36,minZ:8.4,maxZ:20.4,labelX:26,labelZ:10.8}};
+  return {hallway,legacyExtinguisher,finishes,cabinet,zombie,neighbours,held,attachWeapon,weaponPose,renderWeapon,useBatModel,useHandModel,reset,markInspected(id){neighbours.find(n=>n.id===id)?.indicator.material.color.setHex(0x8dc8a9);},room:{id:'common-hallway',name:'공용 복도 · 승강기 홀',kind:'corridor',minX:16,maxX:36,minZ:8.4,maxZ:20.4,labelX:26,labelZ:10.8}};
 };
+

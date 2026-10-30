@@ -1,0 +1,208 @@
+{
+ "inspectionView": true,
+ "hands": {
+  "asset": "para / MakeHuman CC0 FPS arms",
+  "triangles": 4076,
+  "joints": 26,
+  "fingers": 5,
+  "gripBone": "Grip_R",
+  "skinColor": true,
+  "skinNormal": true,
+  "skinRoughness": true,
+  "textureSizes": [
+   [
+    1024,
+    1024
+   ],
+   [
+    1024,
+    1024
+   ],
+   [
+    1024,
+    1024
+   ]
+  ],
+  "animations": [
+   "Idle",
+   "Walk",
+   "Run",
+   "Attack"
+  ],
+  "normalSource": "authored procedural microdetail",
+  "state": "Idle"
+ },
+ "modelErrors": [],
+ "actualAttack": {
+  "started": 0,
+  "frames": [
+   {
+    "swing": 0,
+    "hand": "Idle"
+   },
+   {
+    "swing": 0.05,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.1,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.15000000000000002,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.2,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.23330000000000292,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.26660000000000583,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.3166000000000058,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.34990000000000876,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.3833000000000029,
+    "hand": "Attack"
+   },
+   {
+    "swing": 0.41660000000000585,
+    "hand": "Attack"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   },
+   {
+    "swing": -1,
+    "hand": "Idle"
+   }
+  ],
+  "minStamina": 0.88,
+  "returned": true
+ },
+ "combat": {
+  "swing": -1,
+  "cooldown": 0,
+  "stamina": 1
+ },
+ "vehicles": {
+  "loaded": true,
+  "parked": 33,
+  "driverDoor": true,
+  "errors": [],
+  "parkedTriangles": 13878,
+  "sourceMeshes": 305,
+  "materials": 10,
+  "sourceSize": [
+   4.840295469388366,
+   1.5451387965586036,
+   2.1809000074863434
+  ]
+ },
+ "exterior": {
+  "loaded": true,
+  "panels": 4,
+  "pbrMeshes": 8,
+  "twosomePanels": 21,
+  "twosomePbrMeshes": 32,
+  "twosomeReturns": 11,
+  "streetWallModules": 11,
+  "streetPbrSurfaces": 4,
+  "streetUtilityModels": 2,
+  "error": null
+ },
+ "medianFps": 30,
+ "drawCalls": 2,
+ "triangles": 6748,
+ "failed": [
+  "/favicon.ico"
+ ]
+}

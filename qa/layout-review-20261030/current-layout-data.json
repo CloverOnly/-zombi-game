@@ -1,0 +1,208 @@
+{
+  "title": "현재 게임 배치 / user correction sheet",
+  "source": "C:/Users/lyj/git/-zombi-game",
+  "extractedAt": "2026-10-30T06:01:57.949Z",
+  "units": "game coordinates, not surveyed metres; no geographic north assigned",
+  "landmarks": [
+    {
+      "id": "poyu",
+      "name": "포유하우스",
+      "x": 34,
+      "z": 51,
+      "width": 36,
+      "depth": 66,
+      "height": 33,
+      "front": "east"
+    },
+    {
+      "id": "hospital",
+      "name": "벤조인 요양병원",
+      "x": 35,
+      "z": 12,
+      "width": 32,
+      "depth": 7,
+      "height": 22,
+      "front": "north"
+    },
+    {
+      "id": "gs25",
+      "name": "GS25",
+      "x": 37,
+      "z": -20,
+      "width": 28,
+      "depth": 22,
+      "height": 22,
+      "front": "south"
+    },
+    {
+      "id": "twosome",
+      "name": "A TWOSOME PLACE",
+      "x": 42,
+      "z": 110,
+      "width": 20,
+      "depth": 25,
+      "height": 31,
+      "front": "east"
+    }
+  ],
+  "roads": [
+    {
+      "id": "front-road",
+      "name": "지족로364번길 · 포유하우스 앞",
+      "kind": "road",
+      "minX": 56,
+      "maxX": 64,
+      "minZ": -38,
+      "maxZ": 138,
+      "labelX": 60,
+      "labelZ": 50,
+      "height": 0
+    },
+    {
+      "id": "gs25-alley",
+      "name": "GS25 교차로 · 상가 골목",
+      "kind": "road",
+      "minX": -70,
+      "maxX": 56,
+      "minZ": -5,
+      "maxZ": 5,
+      "labelX": -7,
+      "labelZ": 0,
+      "height": 0
+    },
+    {
+      "id": "cafe-road",
+      "name": "투썸 옆길 · 옹벽 도로",
+      "kind": "road",
+      "minX": -70,
+      "maxX": 72,
+      "minZ": 126,
+      "maxZ": 138,
+      "labelX": 1,
+      "labelZ": 132,
+      "height": 0
+    },
+    {
+      "id": "driveway",
+      "name": "1층 차량 출입구",
+      "kind": "road",
+      "minX": 52,
+      "maxX": 60,
+      "minZ": 72,
+      "maxZ": 78,
+      "labelX": 56,
+      "labelZ": 75,
+      "height": 0
+    },
+    {
+      "id": "boulevard",
+      "name": "북유성대로",
+      "kind": "road",
+      "minX": 80.5,
+      "maxX": 101.5,
+      "minZ": -55,
+      "maxZ": 505,
+      "labelX": 91,
+      "labelZ": 225,
+      "height": 0.115
+    },
+    {
+      "id": "main-join",
+      "name": "북유성대로 진입",
+      "kind": "road",
+      "minX": 60,
+      "maxX": 92,
+      "minZ": 126,
+      "maxZ": 138,
+      "labelX": 76,
+      "labelZ": 132,
+      "height": 0.13
+    }
+  ],
+  "hall": {
+    "minX": 15.740000009536743,
+    "maxX": 36.25999999046326,
+    "minZ": 8.140000009536744,
+    "maxZ": 20.659999990463255,
+    "minY": -0.05699999932944774,
+    "maxY": 2.700000000745058
+  },
+  "apartment": {
+    "minX": 0.03720000150203576,
+    "maxX": 16.129359999132156,
+    "minZ": -6.436800004005434,
+    "maxZ": 12.020800004005434,
+    "minY": -1.4305114759416426e-8,
+    "maxY": 2.640000001788139
+  },
+  "parking": {
+    "minX": 15.90999984741211,
+    "maxX": 52.11000061035156,
+    "minZ": 17.90999984741211,
+    "maxZ": 58.09000015258789,
+    "minY": -3.9549999982118607,
+    "maxY": -0.6699998855590819
+  },
+  "pedestrianEntry": {
+    "x": 16,
+    "z": 24.8
+  },
+  "decorativePoyuPlate": {
+    "x": 52.2,
+    "z": 24.85
+  },
+  "vehicleEntry": {
+    "x": 52,
+    "z": 75
+  },
+  "ramp": [
+    {
+      "x": 47,
+      "z": 58
+    },
+    {
+      "x": 47,
+      "z": 75
+    },
+    {
+      "x": 56,
+      "z": 75
+    }
+  ],
+  "pungjeon": {
+    "main": {
+      "x": 18.77,
+      "z": 12,
+      "extent": [
+        8.5,
+        15.5
+      ]
+    },
+    "return": {
+      "x": 24,
+      "z": 8.26,
+      "extent": [
+        20,
+        28
+      ]
+    },
+    "door": {
+      "x": 18.94,
+      "z": 13.75
+    }
+  },
+  "photoView": {
+    "x": 60,
+    "z": 75,
+    "lookAt": {
+      "x": 47,
+      "z": 75
+    },
+    "photo": "010024"
+  },
+  "notes": [
+    "This is the current game layout, not a verified real site plan.",
+    "The interior hall is a separate render layer; its horizontal projection overlaps the clinic building.",
+    "Labels, entrance directions and building dimensions are open for user correction."
+  ]
+}

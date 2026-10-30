@@ -1,0 +1,151 @@
+{
+  "models": {
+    "zombie": true,
+    "bat": true,
+    "hands": true,
+    "vanity": true,
+    "bed": true,
+    "errors": [],
+    "vehicles": {
+      "loaded": true,
+      "parked": 33,
+      "driverDoor": true,
+      "errors": [],
+      "parkedTriangles": 13878,
+      "sourceMeshes": 305,
+      "materials": 10,
+      "sourceSize": [
+        4.840295469388366,
+        1.5451387965586036,
+        2.1809000074863434
+      ]
+    },
+    "handMesh": {
+      "asset": "Dan Ulrich / Blender Studio CC0 hand + para rig",
+      "triangles": 7396,
+      "handTriangles": 6596,
+      "joints": 27,
+      "fingers": 5,
+      "gripBone": "Grip_R",
+      "authoredGrip": true,
+      "skinColor": true,
+      "skinNormal": true,
+      "skinRoughness": true,
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          2048,
+          2048
+        ],
+        [
+          2048,
+          2048
+        ]
+      ],
+      "materials": [
+        {
+          "name": "Sleeved_Right_Arm",
+          "color": true,
+          "normal": true,
+          "roughness": true,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              1024,
+              1024
+            ],
+            [
+              1024,
+              1024
+            ]
+          ]
+        },
+        {
+          "name": "Studio_Scan_Right_Hand",
+          "color": true,
+          "normal": true,
+          "roughness": true,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              2048,
+              2048
+            ],
+            [
+              2048,
+              2048
+            ]
+          ]
+        }
+      ],
+      "animations": [
+        "Idle",
+        "Walk",
+        "Run",
+        "Attack"
+      ],
+      "normalSource": "authored skin microdetail / Poly Haven cloth normal",
+      "state": "Idle"
+    },
+    "corridor": {
+      "models": {
+        "modern_wooden_cabinet": {
+          "meshes": 3,
+          "pbr": 3
+        },
+        "utility_box_02": {
+          "meshes": 1,
+          "pbr": 1
+        },
+        "korean_fire_extinguisher_01": {
+          "meshes": 3,
+          "pbr": 3
+        },
+        "mounted_fluorescent_lights": {
+          "meshes": 14,
+          "pbr": 14
+        }
+      },
+      "materials": {
+        "floor_tiles_02": true,
+        "painted_plaster_wall": true
+      },
+      "errors": []
+    },
+    "exterior": {
+      "loaded": true,
+      "panels": 4,
+      "pbrMeshes": 8,
+      "twosomePanels": 21,
+      "twosomePbrMeshes": 32,
+      "twosomeReturns": 11,
+      "streetWallModules": 11,
+      "streetPbrSurfaces": 4,
+      "streetUtilityModels": 2,
+      "error": null
+    }
+  },
+  "error": null,
+  "frameSamples": 40,
+  "medianFps": 0.33710895361380866,
+  "drawCalls": 933,
+  "triangles": 1232342,
+  "detail": null,
+  "errors": [],
+  "failed": [],
+  "shots": [
+    "corner",
+    "wall",
+    "front"
+  ],
+  "tag": "before"
+}

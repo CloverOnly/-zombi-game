@@ -1,0 +1,84 @@
+{
+  "backup": "C:\\Users\\lyj\\git\\-zombi-game\\qa\\backups\\right-building-20261030-135358",
+  "target": "C:\\Users\\lyj\\git\\-zombi-game",
+  "protectedUnchanged": true,
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "56EAF1A787F9D5F2FF366726BD71B5C645651A42A6EC7FDA60BDB3A679917242"
+    },
+    {
+      "file": "street-details.js",
+      "sha256": "0FA38EF0657A957C4E3BC0F2EFBE999E91DF28C761F39C18550982C204B32048"
+    },
+    {
+      "file": "exterior-upgrade.js",
+      "sha256": "FD089FECA81D73FCF9F620672C46391A44A7D998AF04C3081B4EB7CF5888705A"
+    },
+    {
+      "file": "right-building-upgrade.js",
+      "sha256": "22FE9B0057779883EB0477AA116DFDBE6C8EEDF68CEFA5833EDB76BA5DC49FB1"
+    },
+    {
+      "file": "RIGHT_BUILDING.md",
+      "sha256": "3E2004F6642181DFB0F184E2AD85EB09AD8DFC439171332C38CF9EB7873AE58C"
+    },
+    {
+      "file": "qa\\build-right-building.py",
+      "sha256": "3B9D88C6EB72E90E74A9D8EA5EC650308F3FD1DA7143C42F43DF67C9954F4C9D"
+    },
+    {
+      "file": "qa\\right-building-source.blend",
+      "sha256": "C0D28653B90F57E305810F8A493349EDB4E78173E26C1B13F380E1F62C538059"
+    },
+    {
+      "file": "qa\\right-building-test.cjs",
+      "sha256": "BE116556812CA54B124BA399CBE7EA35C62FE702EFD0E86EEEA8288A4DFC425C"
+    },
+    {
+      "file": "qa\\right-building-geometry.json",
+      "sha256": "47FBFEF27892F1A3BF6D955C721DC333BCB07917E59C034B2739C3FA2BAD029F"
+    },
+    {
+      "file": "qa\\street-review.cjs",
+      "sha256": "7C20A30544301D57529EFD9C725F2472A7B9B53BB51A1F299A2B1E0C28D25B41"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\clinic-cladding.glb",
+      "sha256": "D43D95B108C38617A838F4E0993CD66A1C203E72E186EB604FA8BAE42C3BF4FD"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\clinic-cornice.glb",
+      "sha256": "2814BF8C4C79704D8D3DAEBAAF49BA388DFD59AF08B365BC2C775D234E7E2558"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\clinic-entry.glb",
+      "sha256": "92FF16BDE547A3C57DEB7495D9B381324D19F84899A8ECE987C4F8620A75073F"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\clinic-window.glb",
+      "sha256": "A68B0AC9C0A3B2639D5AC4E37D5D73670FA82FD0D8FF7841EDCEB9F39F403FCB"
+    },
+    {
+      "file": "assets\\models\\exterior\\right-building\\LICENSE.md",
+      "sha256": "59792C805399AB8EC05D6130424ECBC35F1A85C600671CA054E35CFAD7E303AC"
+    },
+    {
+      "file": "qa\\right-building-before-browser.json",
+      "sha256": "8DD7B241B6AB3615B7F802DEC5EC615DCC23EBB481C515585625B9CD3395A69E"
+    },
+    {
+      "file": "qa\\right-building-before-corner.png",
+      "sha256": "6F019E5AC8C898FD5AF56BEEBFF092A4BC237FFBB8F5F6E68AF6D8D9522ADC5F"
+    },
+    {
+      "file": "qa\\right-building-before-front.png",
+      "sha256": "10FEBFF280A78502B37CCA1A3348FC7BFDB025A7B2F8F9388EB51D221E0E9C73"
+    },
+    {
+      "file": "qa\\right-building-before-wall.png",
+      "sha256": "8853D77E4E8E21A56781067A39070E242FFC979F6F60A8DA82C2BA41AAE25CEA"
+    }
+  ],
+  "finalBrowserVerified": true
+}

@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "roadsCollisionAIUnchanged": true,
+  "twosomeUnchanged": true,
+  "closedShell": true,
+  "legacyHidden": true,
+  "shopOrderVerified": true,
+  "streetOnlyLayerVerified": true,
+  "bounds": {
+    "min": [
+      18.77,
+      -7.6,
+      8.24
+    ],
+    "max": [
+      51.23,
+      14.400003973643061,
+      15.650000026077032
+    ]
+  },
+  "status": {
+    "loaded": true,
+    "target": "hospital",
+    "models": [
+      "clinic-window",
+      "clinic-entry",
+      "clinic-cornice",
+      "clinic-cladding"
+    ],
+    "officeWindows": 72,
+    "shopWindows": 7,
+    "entries": 3,
+    "wallPanels": 213,
+    "batches": 14,
+    "triangles": 85169,
+    "materials": [
+      {
+        "name": "Clinic pale photographic cladding",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic teal glass with authored blinds",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic aluminium frame",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic plain glazed entry",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic aluminium frame.002",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Clinic charcoal metal",
+        "color": false,
+        "normal": true,
+        "roughness": true
+      },
+      {
+        "name": "Authored corrugated parking-side metal",
+        "color": true,
+        "normal": true,
+        "roughness": true
+      }
+    ],
+    "facades": {
+      "parking": "east",
+      "pedestrian": "west",
+      "pungjeon": "west",
+      "pungjeonReturn": "north-west"
+    },
+    "error": null,
+    "parkingServicePanels": 2,
+    "canopies": 4,
+    "renderLayerMask": 8,
+    "shopsFromPoyuCorner": [
+      "풍전돈까스",
+      "보문산 식후경",
+      "명륜진사갈비"
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>포유하우스 | 3D 챕터 1–2</title>
+  <link rel="stylesheet" href="style.css?v=confirmed-plan-26">
+</head>
+<body>
+  <main id="game" aria-label="포유하우스 3D 생존 게임">
+    <canvas id="view" aria-label="3D 게임 화면"></canvas>
+    <div id="vignette" aria-hidden="true"></div>
+    <div id="damageFlash" aria-hidden="true"></div>
+    <div id="hud" class="hidden">
+      <div class="top-left"><span class="eyebrow" id="chapterLabel">CHAPTER 01 · 6F 602호 · 05:42</span><strong id="roomName">안방</strong></div>
+      <div class="top-right"><span id="objective">침대 옆 휴대폰을 찾으세요</span><small id="progress">0 / 6 수집</small></div>
+      <ol id="chapterSteps" class="hidden" aria-label="복도 진행 상황"></ol>
+      <div id="enemyStatus" class="hidden"><span>감염자</span><i><b id="enemyBar"></b></i></div>
+      <button id="soundToggle" type="button" aria-pressed="true" title="B 키로 소리 켜기/끄기">🔊 소리 켜짐</button>
+      <div id="crosshair" aria-hidden="true"></div>
+      <div id="prompt" class="hidden"><kbd>E</kbd><span id="promptText"></span></div>
+      <div id="bottom-left"><div class="meter"><span class="meter-icon">✚</span><i><b id="healthBar"></b></i><small id="healthValue">100</small></div><div class="meter stamina"><span class="meter-icon">↗</span><i><b id="staminaBar"></b></i></div></div>
+      <div id="quickSlots" aria-label="수집 물품"></div>
+      <div id="controlsHint">WASD 이동 · 마우스 시점 · 좌클릭/F 공격 · E 조사 · Shift 달리기 · B 소리 · Tab 가방 · M 지도 · Esc 일시정지</div>
+      <div id="message" class="hidden"></div>
+      <div id="dialogue" class="hidden" role="status" aria-live="polite"><div class="dialogue-top"><strong id="dialogueSpeaker"></strong><small id="dialogueCount"></small></div><p id="dialogueText"></p><span><kbd>E</kbd> 다음 대사</span></div>
+      <div id="vehicleStatus" class="hidden"></div>
+    </div>
+    <section id="start" class="overlay">
+      <div class="panel intro">
+        <span class="eyebrow">3D PC GAME · CHAPTER 01–02</span>
+        <h1>포유하우스</h1>
+        <p>초가을 새벽, 포유하우스 6층 602호에 긴급재난 경보가 울린다. 1~3층은 주차장, 4~10층은 한 층에 여섯 세대가 사는 주거층이다. 방과 거실을 돌아보며 생존 물품을 챙기자. 이웃집을 확인하고 2층 주차장의 내 차를 찾아, 직접 운전해 1층 도로로 내려가자. 골목의 감염자를 피해 롯데마트 노은점으로 이동하자. 북유성대로에는 다중 추돌 사고가 길을 막고 있다.</p>
+        <button id="startButton" class="primary">집에서 시작하기</button>
+        <button id="photoTourButton">집 구조 둘러보기</button>
+        <button id="martCheckpointButton">롯데마트 내부 둘러보기</button>
+        <button id="checkpointButton">현관 앞에서 이어하기</button>
+        <button id="safeEntranceButton">좀비 없이 현관에서 시작하기</button>
+        <button id="parkingCheckpointButton">이웃집 조사부터 이어하기</button>
+        <button id="driveCheckpointButton">운전부터 이어하기</button>
+        <button id="streetCheckpointButton">챕터 2 · 롯데마트로 출발</button>
+        <small>이어하기는 생존 물품을 챙긴 상태로 시작합니다.<br>도보: WASD 이동 · E 조사 · 좌클릭/F 공격<br>운전: W/S 전진·후진 · A/D 조향 · Space 제동 · E 시동/정차 후 하차<br>가구 모델·재질: <a href="https://polyhaven.com" target="_blank" rel="noopener">Poly Haven</a> · 오프라인 사용 가능</small>
+      </div>
+    </section>
+    <section id="inventory" class="overlay hidden" aria-label="가방">
+      <div class="panel inventory-panel"><span class="eyebrow">SURVIVAL KIT</span><h2>가방</h2><p>생존 물품과 현재 장비</p><div id="inventoryItems"></div><h3>이웃집 기록</h3><ul id="neighbourNotes"><li>아직 확인한 집이 없습니다.</li></ul><button id="closeInventory">닫기 <kbd>Tab</kbd></button></div>
+    </section>
+    <section id="mapOverlay" class="overlay hidden" aria-label="집 안 지도">
+      <div class="panel map-panel"><span class="eyebrow">POYU HOUSE</span><h2 id="mapTitle">포유하우스 → 롯데마트 노은점</h2><canvas id="minimap" width="640" height="400"></canvas><p id="mapLegend">노란 점선: 주행 경로 · 빨강: 사고 차량 · 초록: 마트 출입구. 큰길에서는 중앙분리대가 끊긴 곳으로 우회하세요.</p><button id="closeMap">닫기 <kbd>M</kbd></button></div>
+    </section>
+    <section id="pause" class="overlay hidden"><div class="panel"><span class="eyebrow">PAUSED</span><h2>일시정지</h2><p>현관 앞은 여전히 조용하다.</p><button id="resumeButton" class="primary">계속하기</button></div></section>
+    <section id="ending" class="overlay hidden"><div class="panel ending-panel"><span class="eyebrow">CHAPTER 01 · 생존 준비</span><h2 id="endingTitle">일단 차에 탔다</h2><p id="endingText"></p><p id="endingNote" class="ending-note"></p><button id="continueChapterButton" class="primary">차 안 둘러보기</button><button id="restartButton">처음부터 다시</button></div></section>
+    <section id="webglError" class="overlay hidden"><div class="panel"><h2>3D 화면을 열 수 없습니다</h2><p>Chrome이나 Edge에서 그래픽 가속을 켜고 다시 열어 주세요.</p></div></section>
+  </main>
+  <script src="three.min.js"></script>
+  <script src="assets/vendor/gltf-loader.js?v=model-upgrade-1"></script>
+  <script src="assets/photo-bundle.js?v=confirmed-plan-26"></script>
+  <script src="surfaces.js?v=confirmed-plan-26"></script>
+  <script src="street-details.js?v=building-fill-2"></script>
+  <script src="exterior.js?v=confirmed-plan-26"></script>
+  <script src="assets/interior-bundle.js?v=confirmed-plan-26"></script>
+  <script src="interior-polish.js?v=confirmed-plan-26"></script>
+  <script src="rooms.js?v=confirmed-plan-26"></script>
+  <script src="zombie.js?v=confirmed-plan-26"></script>
+  <script src="elevator.js?v=floor6-602-route-4"></script>
+  <script src="parking.js?v=confirmed-plan-26"></script>
+  <script src="mart-route.js?v=confirmed-plan-26"></script>
+  <script src="streets.js?v=building-fill-2"></script>
+  <script src="fps-viewmodel.js?v=studio-hand-5"></script>
+  <script src="hallway.js?v=fps-arm-3"></script>
+  <script src="assets/mart-photo-bundle.js?v=confirmed-plan-26"></script>
+  <script src="mart-interior.js?v=confirmed-plan-26"></script>
+  <script src="realistic-furniture.js?v=furniture-2"></script>
+  <script src="corridor-upgrade.js?v=1"></script>
+  <script src="street-reference-upgrade.js?v=building-fill-2"></script>
+  <script src="exterior-upgrade.js?v=building-fill-2"></script>
+  <script src="vehicle-upgrade.js?v=sedan-1"></script>
+  <script src="model-upgrade.js?v=studio-hand-5"></script>
+  <script src="photo-apartment.js?v=furniture-2"></script>
+  <script src="world.js?v=visual-softening-9"></script>
+  <script src="audio.js?v=confirmed-plan-26"></script>
+  <script src="driving.js?v=confirmed-plan-26"></script>
+  <script src="street-ai.js?v=confirmed-plan-26"></script>
+  <script src="chapter.js?v=fps-arm-3"></script>
+  <script src="game.js?v=fps-arm-3"></script>
+</body>
+</html>
+
+
+
